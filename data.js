@@ -58,7 +58,7 @@ const TRIP = {
           time: '07:40', type: 'flight', dotType: 'flight',
           evType: '抵達阿姆斯特丹 · CI73',
           title: 'Arrive AMS · Check-in Hotel',
-          people: ["Ryan's family", "Eric's family", "Michael's family*"],
+          people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
           time: '下午', type: 'food', dotType: 'food',
@@ -73,6 +73,7 @@ const TRIP = {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Amsterdam',
+          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
         },
       ],
     },
@@ -155,7 +156,7 @@ const TRIP = {
         {
           time: '上午', type: 'drive', dotType: 'drive',
           evType: '租車 · 自駕',
-          title: '取租車 → 開車 Amsterdam → Bremen',
+          title: '取車 → 開車 Amsterdam → Bremen',
           hint: '車程約 3.5 小時。北歐公路之旅正式開始',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
@@ -163,19 +164,27 @@ const TRIP = {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Bremen',
+          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
         },
       ],
     },
 
-    // ── DAY 7 · 7/18 Sat · Bremen → Berlin ──
+    // ── DAY 7 · 7/18 Sat · Bremen 舊城 + 前往 Berlin ──
     {
-      tab: '7/18', tabSub: 'Berlin',
-      badge: 'transit', badgeLabel: 'DAY 7',
-      title: '前往柏林',
-      theme: 'Berlin',
+      tab: '7/18', tabSub: 'Bremen',
+      badge: 'normal', badgeLabel: 'DAY 7',
+      title: 'Bremen 舊城區・前往柏林',
+      theme: 'Bremen',
       events: [
         {
-          time: '上午', type: 'drive', dotType: 'drive',
+          time: '上午', type: 'sight', dotType: 'sight',
+          evType: '舊城區散步',
+          title: 'Bremen 舊城區',
+          hint: '探索中世紀市政廳、羅蘭雕像與布萊梅音樂家雕塑，UNESCO 世界文化遺產',
+          tags: [{ text: '步行即可遊覽', cls: 'tag-note' }],
+        },
+        {
+          time: '下午', type: 'drive', dotType: 'drive',
           evType: '自駕',
           title: '開車 Bremen → Berlin',
           hint: '車程約 4 小時',
@@ -200,10 +209,10 @@ const TRIP = {
           time: '上午', type: 'flight', dotType: 'flight',
           evType: '🎉 集合',
           title: "Shampoo's family 抵達柏林・四家全員到齊",
-          people: ["Shampoo's family", "Ryan's family", "Eric's family", "Michael's family*"],
+          people: ["Shampoo's family", "Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
-          time: '上午', type: 'sight', dotType: 'sight',
+          time: '下午', type: 'sight', dotType: 'sight',
           evType: '地標',
           title: '布蘭登堡門',
           en: 'Brandenburg Gate',
@@ -237,51 +246,87 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 10 · 7/21 Tue · Scooter ──
+    // ── DAY 10 · 7/21 Tue · Scooter + Tempelhof ──
     {
       tab: '7/21', tabSub: 'Scooter',
       badge: 'normal', badgeLabel: 'DAY 10',
-      title: '租 Scooter 逛柏林',
+      title: '租 Scooter・Tempelhof 機場公園',
       theme: 'Berlin',
       events: [
         {
-          time: '全天', type: 'default', dotType: 'default',
+          time: '上午', type: 'default', dotType: 'default',
           evType: '自由探索',
           title: '租 Scooter 逛柏林市區',
           hint: '柏林適合 scooter，快速穿梭 Mitte、Prenzlauer Berg、Kreuzberg 各特色街區',
+          tags: [{ text: '需 14 歲以上', cls: 'tag-warn' }],
+        },
+        {
+          time: '下午', type: 'sight', dotType: 'sight',
+          evType: '城市公園',
+          title: 'Tempelhof 舊機場公園',
+          en: 'Tempelhofer Feld',
+          img: 'https://www.thf-berlin.de/fileadmin/user_upload/THF/Bilder/Tempelhofer_Feld/Tempelhofer_Feld_Sunset.jpg',
+          address: 'Tempelhofer Damm, 12101 Berlin',
+          hint: '由舊柏林 Tempelhof 機場改建的巨大城市公園，保留原來的飛機跑道。適合騎車、溜滑板或全家野餐，感受柏林獨特的開闊感',
+          tags: [{ text: '免費入場', cls: 'tag-note' }],
+          link: { url: 'https://www.thf-berlin.de/en/your-visit/tempelhof-field', label: '官網 ↗' },
         },
       ],
     },
 
-    // ── DAY 11 · 7/22 Wed · 柏林自由日 ──
+    // ── DAY 11 · 7/22 Wed · 柏林 → 漢堡 ──
     {
-      tab: '7/22', tabSub: '柏林',
-      badge: 'normal', badgeLabel: 'DAY 11',
-      title: '柏林・自由活動',
-      theme: 'Berlin',
+      tab: '7/22', tabSub: '漢堡',
+      badge: 'transit', badgeLabel: 'DAY 11',
+      title: '前往漢堡・倉庫城',
+      theme: 'Hamburg',
       events: [
         {
-          time: '全天', type: 'default', dotType: 'default',
-          evType: '自由活動',
-          title: '柏林最後一天・自由探索',
-          hint: 'East Side Gallery、Hackescher Markt、Tempelhof……選你最想再去的角落',
-          tags: [{ text: 'Berlin 最後一天', cls: 'tag-note' }],
+          time: '上午', type: 'drive', dotType: 'drive',
+          evType: '自駕',
+          title: '開車 柏林 → 漢堡',
+          hint: '車程約 3.5 小時',
+        },
+        {
+          time: '下午', type: 'sight', dotType: 'sight',
+          evType: '微縮景觀',
+          title: 'Miniatur Wunderland',
+          img: 'https://www.miniatur-wunderland.com/wp-content/uploads/header-wunderland-logo.png',
+          address: 'Kehrwieder 2/Block D, 20457 Hamburg',
+          hint: '世界最大鐵道模型博物館，擁有極其精細的微縮城市、日夜交替與機場場景，大人小孩都著迷',
+          tags: [{ text: '⚠ 強烈建議提早官網預約', cls: 'tag-warn' }],
+          link: { url: 'https://www.miniatur-wunderland.com/', label: '官網 ↗' },
+        },
+        {
+          time: '傍晚', type: 'sight', dotType: 'sight',
+          evType: '世界遺產',
+          title: '倉庫城散步',
+          en: 'Speicherstadt',
+          img: 'https://www.hamburg.com/resource/image/19324/landscape_ratio16x9/1000/562/speicherstadt-at-night.jpg',
+          address: 'Speicherstadt, 20457 Hamburg',
+          hint: '世界最大的紅磚倉庫區，建於19世紀末，UNESCO 世界文化遺產。傍晚運河倒影非常迷人',
+          link: { url: 'https://www.hamburg.com/visitors/sights/architecture/speicherstadt-19324', label: '官網 ↗' },
+        },
+        {
+          time: '住宿', type: 'hotel', dotType: 'hotel',
+          evType: '住宿',
+          title: 'TBD · 漢堡',
         },
       ],
     },
 
-    // ── DAY 12 · 7/23 Thu · LEGOLAND → Aarhus ──
+    // ── DAY 12 · 7/23 Thu · 漢堡 → LEGOLAND → Odense ──
     {
       tab: '7/23', tabSub: 'LEGO',
       badge: 'transit', badgeLabel: 'DAY 12',
-      title: 'LEGOLAND・前往 Aarhus',
+      title: 'LEGOLAND・前往 Odense',
       theme: 'Billund',
       events: [
         {
           time: '上午', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 Berlin → LEGOLAND Billund',
-          hint: '車程約 6 小時，建議早出發',
+          title: '開車 漢堡 → LEGOLAND Billund',
+          hint: '車程約 3 小時',
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
@@ -296,30 +341,48 @@ const TRIP = {
         {
           time: '傍晚', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 LEGOLAND → Aarhus',
-          hint: '車程約 1 小時 10 分',
+          title: '開車 LEGOLAND → Odense',
+          hint: '車程約 1.5 小時',
         },
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
-          title: 'TBD · Aarhus',
+          title: 'TBD · Odense',
         },
       ],
     },
 
-    // ── DAY 13 · 7/24 Fri · 抵達 Copenhagen ──
+    // ── DAY 13 · 7/24 Fri · Odense → Copenhagen ──
     {
-      tab: '7/24', tabSub: 'CPH抵',
+      tab: '7/24', tabSub: 'Odense',
       badge: 'transit', badgeLabel: 'DAY 13',
-      title: '渡輪・抵達哥本哈根',
-      theme: 'Copenhagen',
+      title: 'Odense 安徒生故鄉・抵達哥本哈根',
+      theme: 'Odense',
       events: [
         {
-          time: '全天', type: 'drive', dotType: 'drive',
-          evType: '自駕 · 含渡輪',
-          title: '開車 Aarhus → Copenhagen（含渡輪）',
-          hint: '車程含渡輪約 3 小時。搭渡輪跨越峽灣是難忘片段，海景絕美',
-          tags: [{ text: '⛴ 渡輪體驗', cls: 'tag-info' }],
+          time: '上午', type: 'sight', dotType: 'sight',
+          evType: '童話故鄉 · 中繼',
+          title: 'Odense 奧登斯',
+          img: 'https://www.visitodense.com/sites/visitodense.com/files/2022-04/HC_Andersen_Museum_Odense_0.jpg',
+          address: 'Odense, Funen, Denmark',
+          hint: '丹麥第三大城，童話大師安徒生的故鄉，充滿中世紀鵝卵石街道與童話氛圍',
+          link: { url: 'https://www.visitodense.com/', label: '官網 ↗' },
+        },
+        {
+          time: '上午', type: 'sight', dotType: 'sight',
+          evType: '建築・博物館',
+          title: 'H.C. Andersens Hus 安徒生博物館',
+          img: 'https://hcandersenshus.dk/wp-content/uploads/sites/3/2025/09/HCAH_Drone_Sommer_August_2024_BKKLA_15-1024x576.jpg',
+          address: 'H.C. Andersen Haven 1, 5000 Odense, Denmark',
+          hint: '2021年全新開幕，由日本建築大師隈研吾設計。沉浸式音效與多媒體裝置，將童話意象與地景建築完美結合',
+          tags: [{ text: '建議官網預約 · 攜帶耳機體驗', cls: 'tag-info' }],
+          link: { url: 'https://hcandersenshus.dk/en/', label: '官網 ↗' },
+        },
+        {
+          time: '下午', type: 'drive', dotType: 'drive',
+          evType: '自駕',
+          title: '開車 Odense → Copenhagen',
+          hint: '車程約 2 小時',
         },
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
@@ -350,27 +413,28 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 15 · 7/26 Sun · 哥德堡 ──
+    // ── DAY 15 · 7/26 Sun · 跨橋至瑞典馬爾默 + World of Volvo ──
     {
-      tab: '7/26', tabSub: '哥德堡',
+      tab: '7/26', tabSub: '馬爾默',
       badge: 'transit', badgeLabel: 'DAY 15',
-      title: '跨海一日遊・瑞典哥德堡',
-      theme: 'Gothenburg',
+      title: '跨海至瑞典馬爾默・World of Volvo',
+      theme: 'Malmö / Gothenburg',
       events: [
         {
-          time: '往返', type: 'flight', dotType: 'flight',
-          evType: '高鐵 · 跨海',
-          title: '從哥本哈根搭高鐵前往瑞典哥德堡',
-          hint: '約 3.5 小時，跨越壯觀的厄勒海峽大橋（Øresund Bridge）進入瑞典',
+          time: '全天', type: 'drive', dotType: 'drive',
+          evType: '自駕 · 跨橋',
+          title: '開車跨越厄勒海峽大橋至瑞典馬爾默',
+          hint: '跨越壯觀的 Øresund Bridge 進入瑞典，抵達馬爾默 (Malmö) 探索這座充滿設計感的城市',
           tags: [{ text: '🇸🇪 跨越丹麥—瑞典大橋', cls: 'tag-info' }],
         },
         {
-          time: '下午', type: 'sight', dotType: 'sight',
-          evType: '品牌展覽',
-          title: 'World of Volvo',
+          time: '(待定)', type: 'sight', dotType: 'sight',
+          evType: '品牌展覽 · Michael 單獨考慮',
+          title: 'World of Volvo（哥德堡）',
           img: 'https://www.worldofvolvo.com/globalassets/visual/wov-exterior--interior/wov_exterior_retouch_20240418_dji_0077-small.jpg?maxwidth=1920&quality=80',
           address: 'Valhallagatan 1, 412 51 Göteborg, Sweden',
-          hint: '2024 年開幕的 Volvo 品牌中心，結合歷史、設計、創新與北歐生活方式。建築壯觀，車迷與建築愛好者都值得一去',
+          hint: '2024 年開幕的 Volvo 品牌中心，結合歷史、設計、創新與北歐生活方式。哥德堡距馬爾默約 2.5 小時，Michael 可考慮單獨前往',
+          tags: [{ text: '路線待確認', cls: 'tag-warn' }],
           link: { url: 'https://www.worldofvolvo.com/', label: '官網 ↗' },
         },
       ],
@@ -427,52 +491,83 @@ const TRIP = {
           time: '下午', type: 'sight', dotType: 'sight',
           evType: '購物 · 設計',
           title: 'Illums Bolighus & Hay House',
+          img: 'https://www.hay.com/globalassets/blocks/brandsite/footer/hay-stores/denmark/new-order-shelving-system_sowden-bottle_pc-portable_910x1100.jpg?w=900',
           address: 'Amagertorv 10, 1160 København（Illums）',
-          hint: '哥本哈根最頂級的設計百貨與 Hay 旗艦店，設計控必訪。Hay House 在三樓，景觀極佳',
+          hint: '哥本哈根最頂級的設計百貨與 Hay 旗艦店，設計控必訪。兩間店位於購物大街，Hay House 在三樓景觀極佳',
           link: { url: 'https://www.illumsbolighus.com/', label: 'Illums 官網 ↗' },
         },
       ],
     },
 
-    // ── DAY 18 · 7/29 Wed · 單車 ──
+    // ── DAY 18 · 7/29 Wed · 單車 + 搭渡輪前往 Münster ──
     {
-      tab: '7/29', tabSub: '單車',
-      badge: 'normal', badgeLabel: 'DAY 18',
-      title: '租腳踏車逛哥本哈根',
-      theme: 'Copenhagen',
+      tab: '7/29', tabSub: '渡輪',
+      badge: 'transit', badgeLabel: 'DAY 18',
+      title: '騎腳踏車・搭渡輪前往德國明斯特',
+      theme: 'Copenhagen → Münster',
       events: [
         {
-          time: '全天', type: 'default', dotType: 'default',
+          time: '上午', type: 'default', dotType: 'default',
           evType: '自由探索',
-          title: '租腳踏車逛哥本哈根市區',
+          title: '騎腳踏車逛哥本哈根市區',
           hint: '哥本哈根是全球最友善單車城市之一，騎車感受丹麥首都的日常節奏',
           tags: [{ text: 'Copenhagen 最後一天', cls: 'tag-note' }],
+        },
+        {
+          time: '下午', type: 'drive', dotType: 'drive',
+          evType: '自駕 · 渡輪',
+          title: '哥本哈根 → Rødby 港口 → Scandlines 渡輪 → 德國',
+          hint: '開車至 Rødby 港口，帶車上 Scandlines 渡輪跨越波羅的海，航程約 45 分鐘抵達德國 Puttgarden，再開車前往明斯特',
+        },
+        {
+          time: '渡輪', type: 'flight', dotType: 'flight',
+          evType: '跨海渡輪',
+          title: 'Scandlines Ferry · Rødby → Puttgarden',
+          img: 'https://www.scandlines.com/-/media/scandlines/images/ferries/hybrid-ferry-berlin.jpg',
+          address: 'Rødby 港口（丹麥）→ Puttgarden（德國）',
+          hint: '往返德國與丹麥的跨海汽車渡輪，連人帶車一起上船，航程約 45 分鐘',
+          tags: [{ text: '務必提早預訂彈性票 (Flex Ticket)', cls: 'tag-warn' }],
+          link: { url: 'https://www.scandlines.com/', label: '官網 ↗' },
+        },
+        {
+          time: '住宿', type: 'hotel', dotType: 'hotel',
+          evType: '住宿',
+          title: 'TBD · Münster 明斯特',
         },
       ],
     },
 
-    // ── DAY 19 · 7/30 Thu · 返回 Amsterdam ──
+    // ── DAY 19 · 7/30 Thu · Shampoo's 返台 + 其他三家返 AMS ──
     {
       tab: '7/30', tabSub: '返AMS',
       badge: 'transit', badgeLabel: 'DAY 19',
-      title: '長途自駕返回阿姆斯特丹',
+      title: "Shampoo's 返台・三家開車返阿姆斯特丹",
       theme: 'Amsterdam',
       events: [
         {
           time: '上午', type: 'flight', dotType: 'flight',
-          evType: 'Shampoo\'s family 離開',
-          title: "Shampoo's family 從 AMS 出發返台",
+          evType: "Shampoo's family 出發",
+          title: "Shampoo's family 從 Copenhagen 出發返台",
           people: ["Shampoo's family"],
         },
         {
-          time: '全天', type: 'drive', dotType: 'drive',
+          time: '上午', type: 'sight', dotType: 'sight',
+          evType: '自行車之都',
+          title: 'Münster 明斯特舊城區',
+          img: 'https://www.germany.travel/media/content/staedte___kultur_1/staedte_und_kultur/muenster/muenster_lambertibrunnen_auf_dem_prinzipalmarkt.jpg',
+          address: 'Münster, Germany',
+          hint: '德國自行車之都，簽署西發里亞和約的和平之城。可沿舊城牆改建的林蔭步道騎腳踏車，或在舊城區品嚐咖啡',
+          link: { url: 'https://www.stadt-muenster.de/en/tourismus/welcome-to-muenster', label: '官網 ↗' },
+        },
+        {
+          time: '午後', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 Copenhagen → Amsterdam',
-          hint: '車程約 9 小時，旅程中最長一段路。建議早出發',
+          title: '開車 Münster → Amsterdam',
+          hint: '車程約 3 小時',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
-          time: '下午', type: 'drive', dotType: 'drive',
+          time: '抵達', type: 'drive', dotType: 'drive',
           evType: '還車',
           title: '還租車',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
@@ -481,6 +576,7 @@ const TRIP = {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Amsterdam',
+          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
         },
       ],
     },
@@ -498,10 +594,16 @@ const TRIP = {
           title: 'Depart AMS → TPE',
           people: ["Eric's family"],
         },
+        {
+          time: '住宿', type: 'hotel', dotType: 'hotel',
+          evType: '住宿',
+          title: 'TBD · Amsterdam',
+          hint: 'Ryan\'s、Michael\'s families',
+        },
       ],
     },
 
-    // ── DAY 21 · 8/1 Sat · 分批 ──
+    // ── DAY 21 · 8/1 Sat · Eric 抵台 + Ryan & Michael 出發 ──
     {
       tab: '8/1', tabSub: '分批',
       badge: 'transit', badgeLabel: 'DAY 21',
