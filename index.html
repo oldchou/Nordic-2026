@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>北歐之旅 2026 · Nordic Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brick: #8B3A2A;
+      --brick-deep: #6B2A1C;
+      --brick-light: #C4614A;
+      --terracotta: #C97A5E;
+      --sand: #F2E8DC;
+      --sand-dark: #E0D0BC;
+      --cream: #FAF6F0;
+      --harbor: #2E4A6B;
+      --harbor-light: #4A7399;
+      --harbor-mist: #C8D8E8;
+      --copper: #B07A42;
+      --copper-light: #D4A460;
+      --dark: #1C1510;
+      --mid: #5A4236;
+      --light-text: #8A7060;
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --border: #E0D0BC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background: var(--brick);
+      min-height: 42vw;
+      max-height: 320px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.10;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 38px, var(--brick-deep) 38px, var(--brick-deep) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 78px, var(--brick-deep) 78px, var(--brick-deep) 80px);
+    }
+
+    .hero-harbor {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(46,74,107,0.25), transparent);
+    }
+
+    .hero-water {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 28px;
+      background: var(--harbor);
+      opacity: 0.18;
+    }
+
+    /* Silhouette buildings */
+    .hero-skyline {
+      position: absolute;
+      bottom: 28px;
+      left: 0; right: 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      opacity: 0.18;
+    }
+    .bld {
+      background: var(--brick-deep);
+      flex-shrink: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 28px 20px 24px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 8vw, 48px);
+      font-weight: 700;
+      color: var(--sand);
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      color: var(--copper-light);
+    }
+
+    .hero-sub {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--sand-dark);
+      margin-top: 8px;
+      opacity: 0.85;
+    }
+
+    .hero-flags {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .flag-chip {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--sand);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ── INFO BAND ── */
+    .info-band {
+      background: var(--harbor);
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 0;
+    }
+    .info-band::-webkit-scrollbar { display: none; }
+
+    .info-item {
+      flex-shrink: 0;
+      padding: 12px 18px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+    }
+    .info-item:last-child { border-right: none; }
+    .info-label {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--harbor-mist);
+      opacity: 0.7;
+      margin-bottom: 3px;
+    }
+    .info-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* ── SECTION TABS ── */
+    .tabs-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--cream);
+      border-bottom: 2px solid var(--sand-dark);
+    }
+
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0 16px;
+      gap: 0;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+
+    .tab {
+      flex-shrink: 0;
+      padding: 13px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--light-text);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .tab.active {
+      color: var(--brick);
+      border-bottom-color: var(--brick);
+    }
+
+    /* ── SECTION ── */
+    .section { display: none; padding: 0 0 80px; }
+    .section.active { display: block; }
+
+    /* ── ITINERARY ── */
+    .day-group { margin: 0; }
+
+    .city-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 16px 10px;
+      position: sticky;
+      top: 47px;
+      z-index: 20;
+      background: var(--cream);
+    }
+
+    .city-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--brick);
+      flex-shrink: 0;
+    }
+
+    .city-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--brick);
+    }
+
+    .city-divider {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .city-count {
+      font-size: 11px;
+      color: var(--light-text);
+      letter-spacing: 0.06em;
+    }
+
+    .day-card {
+      margin: 0 12px 10px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(139,58,42,0.06);
+      transition: box-shadow 0.2s;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      padding: 12px 14px;
+      cursor: pointer;
+      user-select: none;
+      gap: 12px;
+    }
+
+    .day-badge {
+      background: var(--brick);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .day-badge.departure { background: var(--harbor); }
+    .day-badge.travel { background: var(--copper); }
+
+    .day-info { flex: 1; min-width: 0; }
+
+    .day-date {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .day-preview {
+      font-size: 12px;
+      color: var(--light-text);
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .day-chevron {
+      font-size: 16px;
+      color: var(--light-text);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .day-card.open .day-chevron { transform: rotate(180deg); }
+
+    .day-body {
+      display: none;
+      padding: 0 14px 14px;
+      border-top: 1px solid var(--sand-dark);
+    }
+    .day-card.open .day-body { display: block; }
+
+    .time-block {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 8px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--sand-dark);
+    }
+    .time-block:last-child { border-bottom: none; }
+
+    .time-label {
+      font-size: 10px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--brick);
+      font-weight: 500;
+      padding-top: 1px;
+    }
+
+    .time-content {
+      font-size: 13.5px;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+
+    .time-content strong { color: var(--dark); font-weight: 500; }
+
+    .note-chip {
+      display: inline-block;
+      margin-top: 6px;
+      background: var(--sand);
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 6px 6px 0;
+      padding: 5px 8px;
+      font-size: 12px;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+
+    /* ── SPOTS ── */
+    .spots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      padding: 16px 12px;
+    }
+
+    .spot-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(139,58,42,0.06);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .spot-card:active { transform: scale(0.97); }
+
+    .spot-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--sand-dark);
+    }
+
+    .spot-body { padding: 10px 10px 12px; }
+
+    .spot-type {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .spot-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+
+    .spot-desc {
+      font-size: 11.5px;
+      color: var(--light-text);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .spot-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--harbor-light);
+      text-decoration: none;
+    }
+
+    /* ── PEOPLE ── */
+    .people-section {
+      padding: 20px 12px;
+    }
+
+    .people-intro {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--light-text);
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .family-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .family-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 14px;
+      box-shadow: 0 1px 4px rgba(139,58,42,0.06);
+    }
+
+    .family-card.full-row {
+      grid-column: 1 / -1;
+    }
+
+    .family-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .family-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--brick);
+      margin-bottom: 4px;
+    }
+
+    .family-count {
+      font-size: 12px;
+      color: var(--light-text);
+      margin-bottom: 8px;
+    }
+
+    .family-timeline {
+      font-size: 11.5px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .family-timeline span {
+      display: block;
+      padding-left: 12px;
+      position: relative;
+    }
+    .family-timeline span::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(28,21,16,0.6);
+      z-index: 100;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--cream);
+      width: 100%;
+      max-width: 600px;
+      max-height: 88vh;
+      border-radius: 20px 20px 0 0;
+      overflow-y: auto;
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+
+    .modal-handle {
+      width: 40px; height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 14px auto 10px;
+    }
+
+    .modal-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .modal-body { padding: 16px 18px 20px; }
+
+    .modal-type {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 6px;
+    }
+
+    .modal-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .modal-addr {
+      font-size: 12px;
+      color: var(--light-text);
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .modal-desc {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .modal-tip {
+      background: var(--sand);
+      border-left: 3px solid var(--copper);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .modal-tip strong { color: var(--copper); font-weight: 500; }
+
+    .modal-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--brick);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 13px 20px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+      text-align: center;
+      padding: 30px 20px 20px;
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--light-text);
+    }
+
+    /* ── WAVE SEPARATOR ── */
+    .wave-sep {
+      width: 100%;
+      line-height: 0;
+    }
+
+    /* Scrollbar global */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <!-- Skyline silhouette -->
+  <div class="hero-skyline" aria-hidden="true">
+    <div class="bld" style="width:30px;height:55px;"></div>
+    <div class="bld" style="width:14px;height:38px;"></div>
+    <div class="bld" style="width:22px;height:70px;"></div>
+    <div class="bld" style="width:10px;height:28px;"></div>
+    <div class="bld" style="width:35px;height:48px;"></div>
+    <div class="bld" style="width:6px;height:80px;"></div>
+    <div class="bld" style="width:18px;height:42px;"></div>
+    <div class="bld" style="width:28px;height:60px;"></div>
+    <div class="bld" style="width:12px;height:30px;"></div>
+    <div class="bld" style="width:50px;height:52px;"></div>
+    <div class="bld" style="width:8px;height:90px;"></div>
+    <div class="bld" style="width:24px;height:45px;"></div>
+    <div class="bld" style="width:16px;height:35px;"></div>
+    <div class="bld" style="width:40px;height:65px;"></div>
+    <div class="bld" style="width:20px;height:38px;"></div>
+    <div class="bld" style="width:30px;height:55px;"></div>
+    <div class="bld" style="width:10px;height:72px;"></div>
+    <div class="bld" style="width:45px;height:48px;"></div>
+    <div class="bld" style="width:12px;height:30px;"></div>
+    <div class="bld" style="width:26px;height:58px;"></div>
+    <div class="bld" style="width:18px;height:40px;"></div>
+    <div class="bld" style="width:32px;height:68px;"></div>
+    <div class="bld" style="width:14px;height:33px;"></div>
+    <div class="bld" style="width:22px;height:52px;"></div>
+    <div class="bld" style="width:38px;height:45px;"></div>
+    <div class="bld" style="width:10px;height:85px;"></div>
+    <div class="bld" style="width:20px;height:42px;"></div>
+  </div>
+  <div class="hero-harbor"></div>
+  <div class="hero-water"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Summer 2026 · Family Journey</div>
+    <div class="hero-title">北歐之旅<br/><span>Nordic Journey</span></div>
+    <div class="hero-sub">Amsterdam · Bremen · Berlin · LEGOLAND · Copenhagen</div>
+    <div class="hero-flags">
+      <div class="flag-chip">🇳🇱 荷蘭</div>
+      <div class="flag-chip">🇩🇪 德國</div>
+      <div class="flag-chip">🇩🇰 丹麥</div>
+      <div class="flag-chip">🇸🇪 瑞典</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INFO BAND ── -->
+<div class="info-band">
+  <div class="info-item">
+    <div class="info-label">出發日</div>
+    <div class="info-value">7/12 Sun</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">總天數</div>
+    <div class="info-value">22 天</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">航班</div>
+    <div class="info-value">CI73 / CI74</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">同行家庭</div>
+    <div class="info-value">4 家</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">總人數</div>
+    <div class="info-value">15 人</div>
+  </div>
+</div>
+
+<!-- ── TABS ── -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <div class="tab active" data-section="itinerary">行程總覽</div>
+    <div class="tab" data-section="spots">景點地圖</div>
+    <div class="tab" data-section="people">各家行程</div>
+  </div>
+</div>
+
+<!-- ══ SECTION: ITINERARY ══ -->
+<div class="section active" id="section-itinerary">
+
+  <!-- Amsterdam -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:var(--harbor)"></div>
+      <div class="city-name">✈ 出發 / Amsterdam</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 1–5</div>
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card" data-day="1">
+      <div class="day-header">
+        <div class="day-badge departure">Day 1</div>
+        <div class="day-info">
+          <div class="day-date">7/12 · Sun · 出發日</div>
+          <div class="day-preview">23:10 從台北出發</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">晚間</div>
+          <div class="time-content">
+            <strong>23:10 Depart TPE</strong> — CI73<br/>
+            Ryan's、Eric's、Michael's families
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card" data-day="2">
+      <div class="day-header">
+        <div class="day-badge">Day 2</div>
+        <div class="day-info">
+          <div class="day-date">7/13 · Mon · Amsterdam</div>
+          <div class="day-preview">抵達阿姆斯特丹 · Bocca Coffee</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">早上</div>
+          <div class="time-content">
+            <strong>07:40 Arrive AMS</strong> — CI73<br/>
+            辦理 Check-in
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>Bocca Coffee</strong> ☕<br/>
+            阿姆斯特丹知名精品烘豆坊，旅途開始的第一杯好咖啡
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card" data-day="3">
+      <div class="day-header">
+        <div class="day-badge">Day 3</div>
+        <div class="day-info">
+          <div class="day-date">7/14 · Tue · Amsterdam</div>
+          <div class="day-preview">梵谷博物館 · 九街</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>博物館廣場 · 梵谷博物館</strong><br/>
+            全球最大梵谷畫作收藏，需早場預約
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>九街 (De Negen Straatjes)</strong><br/>
+            運河區九條小街，獨立精品店與古董店
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card" data-day="4">
+      <div class="day-header">
+        <div class="day-badge">Day 4</div>
+        <div class="day-info">
+          <div class="day-date">7/15 · Wed · Amsterdam</div>
+          <div class="day-preview">風車村 Zaanse Schans 半日遊</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>Zaanse Schans 風車村</strong> — 半日遊<br/>
+            荷蘭著名風車村，可參觀風車內部、乳酪工廠與木鞋工坊
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card" data-day="5">
+      <div class="day-header">
+        <div class="day-badge">Day 5</div>
+        <div class="day-info">
+          <div class="day-date">7/16 · Thu · Amsterdam</div>
+          <div class="day-preview">租腳踏車逛市區</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            <strong>租腳踏車逛阿姆斯特丹市區</strong><br/>
+            沿運河騎行，探索各個社區
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bremen -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:var(--copper)"></div>
+      <div class="city-name">🚗 Bremen</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 6</div>
+    </div>
+
+    <div class="day-card" data-day="6">
+      <div class="day-header">
+        <div class="day-badge travel">Day 6</div>
+        <div class="day-info">
+          <div class="day-date">7/17 · Fri · 前往 Bremen</div>
+          <div class="day-preview">取租車 · 開車 AMS → Bremen 3.5 hr</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>取租車</strong><br/>
+            開車 Amsterdam → Bremen，約 3.5 小時
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">住宿</div>
+          <div class="time-content">TBD · Bremen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Berlin -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:var(--mid)"></div>
+      <div class="city-name">🇩🇪 Berlin</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 7–10</div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card" data-day="7">
+      <div class="day-header">
+        <div class="day-badge travel">Day 7</div>
+        <div class="day-info">
+          <div class="day-date">7/18 · Sat · 抵達 Berlin</div>
+          <div class="day-preview">Bremen → Berlin 4 hr · Shampoo's family 加入</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            開車 Bremen → Berlin，約 4 小時<br/>
+            <span class="note-chip">🎉 Shampoo's family 抵達 Berlin，全員集合！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-card" data-day="8">
+      <div class="day-header">
+        <div class="day-badge">Day 8</div>
+        <div class="day-info">
+          <div class="day-date">7/19 · Sun · Berlin</div>
+          <div class="day-preview">布蘭登堡門</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>布蘭登堡門</strong><br/>
+            柏林最具象徵性的地標，曾見證德國分裂與統一
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 9 -->
+    <div class="day-card" data-day="9">
+      <div class="day-header">
+        <div class="day-badge">Day 9</div>
+        <div class="day-info">
+          <div class="day-date">7/20 · Mon · Berlin</div>
+          <div class="day-preview">Boros 收藏館（當代藝術）</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>Boros 收藏館</strong><br/>
+            位於前二戰防空碉堡內的私人當代藝術館<br/>
+            <span class="note-chip">⚠️ 需提前數月訂位</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 10 -->
+    <div class="day-card" data-day="10">
+      <div class="day-header">
+        <div class="day-badge">Day 10</div>
+        <div class="day-info">
+          <div class="day-date">7/21 · Tue · Berlin</div>
+          <div class="day-preview">租 scooter 逛市區</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            <strong>租 scooter 逛柏林市區</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGOLAND / Aarhus -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:#E8C13A"></div>
+      <div class="city-name">🧱 LEGOLAND · Aarhus</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 11</div>
+    </div>
+
+    <div class="day-card" data-day="11">
+      <div class="day-header">
+        <div class="day-badge travel">Day 11</div>
+        <div class="day-info">
+          <div class="day-date">7/22 · Wed · LEGOLAND</div>
+          <div class="day-preview">Berlin → LEGOLAND → Aarhus</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            開車 Berlin → LEGOLAND Billund，約 6 小時
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>LEGOLAND® Billund Resort</strong><br/>
+            全球第一座樂高樂園！建議預購門票
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">傍晚</div>
+          <div class="time-content">
+            開車 LEGOLAND → Aarhus，約 1 hr 10 min<br/>
+            <div class="note-chip">住宿 TBD · Aarhus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copenhagen -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:var(--brick)"></div>
+      <div class="city-name">🇩🇰 Copenhagen</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 12–18</div>
+    </div>
+
+    <!-- Day 12 -->
+    <div class="day-card" data-day="12">
+      <div class="day-header">
+        <div class="day-badge travel">Day 12</div>
+        <div class="day-info">
+          <div class="day-date">7/23 · Thu · 抵達 Copenhagen</div>
+          <div class="day-preview">Aarhus → Copenhagen 3 hr（含渡輪）</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            開車 Aarhus → Copenhagen，約 3 小時<br/>
+            含搭乘渡輪跨越峽灣，絕美海景
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 13 -->
+    <div class="day-card" data-day="13">
+      <div class="day-header">
+        <div class="day-badge">Day 13</div>
+        <div class="day-info">
+          <div class="day-date">7/24 · Fri · Copenhagen</div>
+          <div class="day-preview">路易斯安那現代藝術博物館</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>路易斯安那現代藝術博物館</strong><br/>
+            被譽為世界最美博物館之一，藝術、建築與海岸景觀完美融合<br/>
+            <span class="note-chip">💡 建議預留至少 3 小時</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 14 -->
+    <div class="day-card" data-day="14">
+      <div class="day-header">
+        <div class="day-badge">Day 14</div>
+        <div class="day-info">
+          <div class="day-date">7/25 · Sat · 一日遊瑞典</div>
+          <div class="day-preview">跨海到哥德堡 · World of Volvo</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            <strong>跨海一日遊：瑞典哥德堡 (Gothenburg)</strong><br/>
+            搭高鐵約 3.5 小時，跨越厄勒海峽大橋
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>World of Volvo</strong><br/>
+            2024 年開幕的 Volvo 品牌中心，建築設計壯觀
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 15 -->
+    <div class="day-card" data-day="15">
+      <div class="day-header">
+        <div class="day-badge">Day 15</div>
+        <div class="day-info">
+          <div class="day-date">7/26 · Sun · Copenhagen</div>
+          <div class="day-preview">Finn Juhl's House · Coffee Collective</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>Finn Juhl's House</strong><br/>
+            丹麥設計大師的私人故居，體現「整體設計」概念
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>Coffee Collective</strong> ☕<br/>
+            丹麥最具代表性的精品咖啡，注重公平貿易與極淺焙風格
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 16 -->
+    <div class="day-card" data-day="16">
+      <div class="day-header">
+        <div class="day-badge">Day 16</div>
+        <div class="day-info">
+          <div class="day-date">7/27 · Mon · Copenhagen</div>
+          <div class="day-preview">丹麥設計博物館 · Illums &amp; Hay House</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>丹麥設計博物館</strong><br/>
+            展示丹麥設計的歷史與未來，包含經典家具設計
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">下午</div>
+          <div class="time-content">
+            <strong>Illums Bolighus &amp; Hay House</strong><br/>
+            頂級設計百貨與 Hay 旗艦店，購物首選
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 17 -->
+    <div class="day-card" data-day="17">
+      <div class="day-header">
+        <div class="day-badge">Day 17</div>
+        <div class="day-info">
+          <div class="day-date">7/28 · Tue · Copenhagen</div>
+          <div class="day-preview">租腳踏車逛市區</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            <strong>租腳踏車逛哥本哈根市區</strong><br/>
+            自由探索，感受丹麥的單車文化
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 18 -->
+    <div class="day-card" data-day="18">
+      <div class="day-header">
+        <div class="day-badge">Day 18</div>
+        <div class="day-info">
+          <div class="day-date">7/29 · Wed · Copenhagen</div>
+          <div class="day-preview">自由活動</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">自由活動 · 最後一天盡情感受哥本哈根</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return -->
+  <div class="day-group">
+    <div class="city-header">
+      <div class="city-dot" style="background:var(--harbor)"></div>
+      <div class="city-name">✈ 回程</div>
+      <div class="city-divider"></div>
+      <div class="city-count">Day 19–22</div>
+    </div>
+
+    <div class="day-card" data-day="19">
+      <div class="day-header">
+        <div class="day-badge travel">Day 19</div>
+        <div class="day-info">
+          <div class="day-date">7/30 · Thu · 返回阿姆斯特丹</div>
+          <div class="day-preview">開車 CPH → AMS 9 hr · Shampoo's 出發</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">全天</div>
+          <div class="time-content">
+            <strong>Shampoo's family</strong>：從 AMS 出發回台<br/>
+            <strong>Eric's、Ryan's、Michael's families</strong>：開車 Copenhagen → Amsterdam，約 9 小時
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card" data-day="20">
+      <div class="day-header">
+        <div class="day-badge departure">Day 20</div>
+        <div class="day-info">
+          <div class="day-date">7/31 · Fri · Eric's family 回台</div>
+          <div class="day-preview">11:00 Depart AMS CI74</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>11:00 Depart AMS</strong> — CI74<br/>
+            Eric's family 啟程回台
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card" data-day="21">
+      <div class="day-header">
+        <div class="day-badge departure">Day 21</div>
+        <div class="day-info">
+          <div class="day-date">8/1 · Sat · 陸續抵台 / 出發</div>
+          <div class="day-preview">Eric's 抵台 · Ryan's &amp; Michael's 出發</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">早上</div>
+          <div class="time-content">
+            <strong>06:15 Arrive TPE</strong> — Eric's family 抵達台北
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time-label">上午</div>
+          <div class="time-content">
+            <strong>11:00 Depart AMS</strong> — CI74<br/>
+            Ryan's family、Michael's family 啟程回台
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card" data-day="22">
+      <div class="day-header">
+        <div class="day-badge departure">Day 22</div>
+        <div class="day-info">
+          <div class="day-date">8/2 · Sun · 全員平安回台</div>
+          <div class="day-preview">06:15 Arrive TPE</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="time-block">
+          <div class="time-label">早上</div>
+          <div class="time-content">
+            <strong>06:15 Arrive TPE</strong><br/>
+            Ryan's family、Michael's family 抵達台北<br/>
+            <span class="note-chip">🏠 北歐之旅圓滿結束！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">Bon voyage · God rejse · 旅途愉快</div>
+</div>
+
+<!-- ══ SECTION: SPOTS ══ -->
+<div class="section" id="section-spots">
+  <div class="spots-grid" id="spots-grid">
+    <!-- Rendered by JS -->
+  </div>
+</div>
+
+<!-- ══ SECTION: PEOPLE ══ -->
+<div class="section" id="section-people">
+  <div class="people-section">
+    <div class="people-intro">此行共四個家庭，15 人同遊北歐。<br/>各家抵達與離台時間略有不同。</div>
+
+    <div class="family-grid">
+
+      <!-- Shampoo's -->
+      <div class="family-card">
+        <div class="family-icon">🏠</div>
+        <div class="family-name">Shampoo's Family</div>
+        <div class="family-count">四人</div>
+        <div class="family-timeline">
+          <span>7/18 抵達 Berlin</span>
+          <span>7/29 離開 Copenhagen</span>
+          <span>7/30 Depart AMS</span>
+        </div>
+      </div>
+
+      <!-- Eric's -->
+      <div class="family-card">
+        <div class="family-icon">🏠</div>
+        <div class="family-name">Eric's Family</div>
+        <div class="family-count">四人</div>
+        <div class="family-timeline">
+          <span>7/12 Depart TPE CI73</span>
+          <span>7/31 Depart AMS CI74</span>
+          <span>8/1 Arrive TPE CI64</span>
+        </div>
+      </div>
+
+      <!-- Ryan's -->
+      <div class="family-card">
+        <div class="family-icon">🏠</div>
+        <div class="family-name">Ryan's Family</div>
+        <div class="family-count">三人</div>
+        <div class="family-timeline">
+          <span>7/12 Depart TPE CI73</span>
+          <span>8/1 Depart AMS CI74</span>
+          <span>8/2 Arrive TPE</span>
+        </div>
+      </div>
+
+      <!-- Michael's -->
+      <div class="family-card full-row" style="grid-column:1/-1">
+        <div class="family-icon">🏠</div>
+        <div class="family-name">Michael's Family</div>
+        <div class="family-count">四人</div>
+        <div class="family-timeline">
+          <span>7/12 Depart TPE CI73</span>
+          <span>全程同行（Amsterdam → Bremen → Berlin → LEGOLAND → Copenhagen）</span>
+          <span>8/1 Depart AMS CI74</span>
+          <span>8/2 Arrive TPE</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Summary table -->
+    <div style="margin-top:24px;">
+      <div class="city-header" style="position:static;padding:0 0 10px;">
+        <div class="city-dot"></div>
+        <div class="city-name" style="font-size:15px;">航班總覽</div>
+        <div class="city-divider"></div>
+      </div>
+      <div style="background:var(--card-bg);border-radius:12px;border:1px solid var(--border);overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+          <thead>
+            <tr style="background:var(--sand);">
+              <th style="padding:10px 12px;text-align:left;font-weight:500;color:var(--mid);border-bottom:1px solid var(--border);">日期</th>
+              <th style="padding:10px 12px;text-align:left;font-weight:500;color:var(--mid);border-bottom:1px solid var(--border);">航班</th>
+              <th style="padding:10px 12px;text-align:left;font-weight:500;color:var(--mid);border-bottom:1px solid var(--border);">適用家庭</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 12px;color:var(--dark);">7/12 23:10</td>
+              <td style="padding:9px 12px;"><strong>CI73</strong> TPE→AMS</td>
+              <td style="padding:9px 12px;color:var(--light-text);">Ryan's / Eric's / Michael's</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 12px;color:var(--dark);">7/13 07:40</td>
+              <td style="padding:9px 12px;">Arrive AMS</td>
+              <td style="padding:9px 12px;color:var(--light-text);">三家抵達</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 12px;color:var(--dark);">7/31 11:00</td>
+              <td style="padding:9px 12px;"><strong>CI74</strong> AMS→TPE</td>
+              <td style="padding:9px 12px;color:var(--light-text);">Eric's</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 12px;color:var(--dark);">8/1 06:15</td>
+              <td style="padding:9px 12px;">Arrive TPE</td>
+              <td style="padding:9px 12px;color:var(--light-text);">Eric's</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:9px 12px;color:var(--dark);">8/1 11:00</td>
+              <td style="padding:9px 12px;"><strong>CI74</strong> AMS→TPE</td>
+              <td style="padding:9px 12px;color:var(--light-text);">Ryan's / Michael's</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 12px;color:var(--dark);">8/2 06:15</td>
+              <td style="padding:9px 12px;">Arrive TPE</td>
+              <td style="padding:9px 12px;color:var(--light-text);">Ryan's / Michael's</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <img class="modal-img" id="modal-img" src="" alt="" />
+    <div class="modal-body">
+      <div class="modal-type" id="modal-type"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-addr" id="modal-addr"></div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <div class="modal-tip" id="modal-tip"></div>
+      <a class="modal-btn" id="modal-link" href="#" target="_blank" rel="noopener">
+        🗺 在地圖上查看
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── DATA ──
+  const spots = [
+    {
+      id: 'Vangogh',
+      name: '梵谷博物館',
+      nameEn: 'Van Gogh Museum',
+      addr: 'Museumplein 6, Amsterdam',
+      desc: '全世界收藏最多梵谷畫作的博物館，必訪！',
+      tip: '需早場預約，建議出發前幾週訂票。',
+      type: '博物館 · Amsterdam',
+      img: 'https://www.vangoghmuseum.nl/assets/9d8ff7b6-f3ae-42d7-ae40-f4886ebd4b95?w=900&h=1671&x=1158&y=568&cropWidth=1316&cropHeight=2352&format=webp&c=56cadd4dc32684fe97fbd438bc587d5df3a3a32975445715990df2324b6fe41b',
+      url: 'https://maps.app.goo.gl/1mjz8vnywgtZrsfNA',
+    },
+    {
+      id: 'ZaanseSchans',
+      name: '風車村',
+      nameEn: 'Zaanse Schans',
+      addr: 'Schansend 7, 1509 AW Zaandam, Netherlands',
+      desc: '荷蘭著名的風車村，保留了木造建築、風車和傳統工藝。',
+      tip: '建議安排半日遊，可參觀風車內部、乳酪工廠和木鞋工坊。',
+      type: '景點 · Amsterdam',
+      img: 'https://www.dezaanseschans.nl/wp-content/uploads/2024/06/Zaanse-Schans-x-ZEB-69.jpg',
+      url: 'https://www.dezaanseschans.nl/zh-hant/',
+    },
+    {
+      id: '9Straatjes',
+      name: '九街',
+      nameEn: 'De Negen Straatjes',
+      addr: 'Wolvenstraat 9, 1016 EM Amsterdam',
+      desc: '阿姆斯特丹運河區內的九條小街，充滿獨立精品店、古董店與餐廳。',
+      tip: '適合漫步挖掘獨特的北歐小物，每條巷弄都有驚喜。',
+      type: '購物 · Amsterdam',
+      img: 'https://de9straatjes.nl/contents/images/kaart.webp',
+      url: 'https://de9straatjes.nl/en',
+    },
+    {
+      id: 'BoccaCoffee',
+      name: 'Bocca Coffee',
+      nameEn: 'Bocca Coffee',
+      addr: 'Kerkstraat 96, 1017 GP Amsterdam',
+      desc: '阿姆斯特丹知名的精品咖啡烘豆坊，提供優質的手沖與義式咖啡。',
+      tip: '店內空間寬敞現代，是旅途中歇腳的好地方。',
+      type: '咖啡 · Amsterdam',
+      img: 'https://bocca.nl/cdn/shop/files/Bocca-Kerkstraat-2-Jasper-de-Waal-Photography-1-1350x901.webp?v=1742835373&width=1296',
+      url: 'https://bocca.nl/en',
+    },
+    {
+      id: 'BrandenburgGate',
+      name: '布蘭登堡門',
+      nameEn: 'Brandenburg Gate',
+      addr: 'Pariser Platz, 10117 Berlin',
+      desc: '柏林最具象徵性的地標，原為城門，曾見證德國分裂與統一。',
+      tip: '全天開放，建議傍晚前往拍照，燈光效果極佳。',
+      type: '地標 · Berlin',
+      img: 'https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_xl_2x/private/image/brandenburger_tor_fruehling_650696492_gettyimages_sborisov.jpg.webp?itok=z475Fl4U',
+      url: 'https://www.visitberlin.de/en/brandenburg-gate',
+    },
+    {
+      id: 'BorosCollection',
+      name: 'Boros 收藏館',
+      nameEn: 'Boros Collection',
+      addr: 'Reinhardtstraße 20, 10117 Berlin',
+      desc: '位於前二戰防空碉堡內的私人當代藝術收藏館，空間本身即是震撼的建築作品。',
+      tip: '需提前數月訂位，請盡早安排！',
+      type: '藝術 · Berlin',
+      img: 'https://boros-collection.com/fileadmin/user_upload/Startseite/Boros-Collection-aussen-gesamt.jpg',
+      url: 'https://www.sammlung-boros.de/',
+    },
+    {
+      id: 'LEGOLAND',
+      name: '樂高樂園',
+      nameEn: 'LEGOLAND® Billund Resort',
+      addr: 'Nordmarksvej 9, 7190 Billund, Denmark',
+      desc: '全球第一座樂高樂園，擁有豐富的遊樂設施與壯觀的樂高微縮景觀。',
+      tip: '建議預先購買門票，園內的樂高商店品項非常齊全。',
+      type: '主題樂園 · Billund',
+      img: 'https://www.legoland.dk/media/safbchyj/081-legoland__k1a1579_final_700x500.jpg?format=webp&quality=80&width=720&height=360',
+      url: 'https://www.legoland.dk/en/',
+    },
+    {
+      id: 'Louisiana',
+      name: '路易斯安那現代藝術博物館',
+      nameEn: 'Louisiana Museum of Modern Art',
+      addr: 'Gl. Strandvej 13, 3050 Humlebæk, Denmark',
+      desc: '被譽為世界上最美的博物館之一，藝術、建築與海岸景觀完美融合。',
+      tip: '建議預留至少三小時參觀。',
+      type: '博物館 · Copenhagen',
+      img: 'https://louisiana.dk/wp-content/uploads/2020/08/2015_06_01_Louisiana_Genrebilleder_101-1-1600x1067.jpg',
+      url: 'https://louisiana.dk/en/',
+    },
+    {
+      id: 'FinnJuhl',
+      name: '芬·尤爾故居',
+      nameEn: "Finn Juhl's House",
+      addr: 'Vilvordevej 110, 2920 Charlottenlund',
+      desc: '丹麥設計大師 Finn Juhl 的私人故居，體現了「整體設計」的概念。',
+      tip: '建議先確認開放時間再安排行程。',
+      type: '設計 · Copenhagen',
+      img: 'https://ordrupgaard.dk/wp-content/uploads/2021/01/Finn-Juhls-hus-Interioer-1-Foto-Henrik-Soerensen-2.jpg',
+      url: 'https://ordrupgaard.dk/en/exhibitions/finn-juhls-house/',
+    },
+    {
+      id: 'Designmuseum',
+      name: '丹麥設計博物館',
+      nameEn: 'Designmuseum Danmark',
+      addr: 'Bredgade 68, 1260 København',
+      desc: '展示丹麥設計的歷史與未來，包含經典的丹麥家具設計。',
+      tip: '博物館商店非常值得一逛，有許多精緻的設計良品。',
+      type: '博物館 · Copenhagen',
+      img: 'https://designmuseum.dk/en/wp-content/uploads/sites/5/2024/12/Danish-Modern_Foto-JoakimZuger-1.jpg',
+      url: 'https://designmuseum.dk/en/',
+    },
+    {
+      id: 'CoffeeCollective',
+      name: 'Coffee Collective',
+      nameEn: 'Coffee Collective',
+      addr: 'Jægersborggade 57, 2200 København N',
+      desc: '丹麥最具代表性的精品咖啡店，注重公平貿易與極淺焙風格。創始店位於文藝氣息濃厚的街道。',
+      tip: '同時探索 Jægersborggade 街道上的其他特色小店。',
+      type: '咖啡 · Copenhagen',
+      img: 'https://coffeecollective.dk/cdn/shop/files/carlsberg_byen_high_res.jpg?v=1764586224',
+      url: 'https://coffeecollective.dk/',
+    },
+    {
+      id: 'WorldOfVolvo',
+      name: 'World of Volvo',
+      nameEn: 'World of Volvo',
+      addr: 'Valhallagatan 1, 412 51 Göteborg, Sweden',
+      desc: '2024年開幕的 Volvo 品牌中心，結合歷史、設計、創新與北歐生活方式。',
+      tip: '建築設計壯觀，除了車迷外，建築愛好者也不容錯過。',
+      type: '展覽 · Gothenburg',
+      img: 'https://www.worldofvolvo.com/globalassets/visual/wov-exterior--interior/wov_exterior_retouch_20240418_dji_0077-small.jpg?maxwidth=1920&quality=80',
+      url: 'https://www.worldofvolvo.com/',
+    },
+    {
+      id: 'DesignShopping',
+      name: 'Illums Bolighus & Hay House',
+      nameEn: 'Illums Bolighus & Hay House',
+      addr: 'Amagertorv 10, 1160 København',
+      desc: '哥本哈根最頂級的設計百貨與現代設計品牌 Hay 的旗艦店，設計控必訪。',
+      tip: '兩間店都位於購物大街，Hay House 位於三樓，景觀極佳。',
+      type: '購物 · Copenhagen',
+      img: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
+      url: 'https://www.illumsbolighus.com/',
+    },
+  ];
+
+  // Render spots
+  const grid = document.getElementById('spots-grid');
+  spots.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'spot-card';
+    card.innerHTML = `
+      <img class="spot-img" src="${s.img}" alt="${s.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=400&q=60'" />
+      <div class="spot-body">
+        <div class="spot-type">${s.type}</div>
+        <div class="spot-name">${s.name}</div>
+        <div class="spot-desc">${s.desc}</div>
+      </div>
+    `;
+    card.addEventListener('click', () => openModal(s));
+    grid.appendChild(card);
+  });
+
+  // Modal
+  const overlay = document.getElementById('modal-overlay');
+  function openModal(s) {
+    document.getElementById('modal-img').src = s.img;
+    document.getElementById('modal-type').textContent = s.type;
+    document.getElementById('modal-name').textContent = s.name + (s.nameEn ? ' · ' + s.nameEn : '');
+    document.getElementById('modal-addr').textContent = s.addr;
+    document.getElementById('modal-desc').textContent = s.desc;
+    const tipEl = document.getElementById('modal-tip');
+    tipEl.innerHTML = '<strong>💡 旅遊提示：</strong>' + s.tip;
+    const link = document.getElementById('modal-link');
+    link.href = s.url;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const sec = tab.dataset.section;
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('section-' + sec).classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+
+  // Day cards toggle
+  document.querySelectorAll('.day-card').forEach(card => {
+    card.querySelector('.day-header').addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
