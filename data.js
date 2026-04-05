@@ -10,18 +10,17 @@
 //    drive   → 赭紅（自駕、租車）
 //    default → 灰白（自由活動、其他）
 //
-//  tag 樣式 (tagClass):
-//    tag-warn  → 橘色（警告、注意）
-//    tag-info  → 藍色（資訊）
-//    tag-brick → 磚紅（重點）
-//    tag-note  → 灰色（備註）
+//  tag 樣式:
+//    tag-warn  → 橘色    tag-info → 藍色
+//    tag-brick → 磚紅    tag-note → 灰色
 //
-//  people 陣列：名字後加 * 代表粗體標示（Michael's family）
+//  people：名字後加 * 代表粗體標示（Michael's family）
 // ============================================================
 
 const TRIP = {
-  title: '北歐之旅',
+  title: '北歐設計、單車、咖啡文化之旅',
   subtitle: '2026 年 7 月 12 日 – 8 月 2 日 · 22 天',
+  sheetsUrl: 'https://docs.google.com/spreadsheets/d/156MmwAFObsIvsE8CYA1BWxEvaouGdqNjEpfGV4_3MaU/edit?usp=sharing',
   badges: [
     { text: '4 個家庭 · 15 人', style: 'harbor' },
     { text: '🇳🇱 🇩🇪 🇩🇰 🇸🇪',  style: 'brick'  },
@@ -44,21 +43,32 @@ const TRIP = {
           hint: 'Shampoo\'s family 稍後在柏林會合',
           people: ["Ryan's family", "Eric's family", "Michael's family*"],
         },
+        {
+          time: '機上', type: 'hotel', dotType: 'hotel',
+          evType: '住宿',
+          title: 'On flight',
+        },
       ],
     },
 
     // ── DAY 2 · 7/13 Mon · 抵達 Amsterdam ──
     {
-      tab: '7/13', tabSub: 'AMS抵',
+      tab: '7/13', tabSub: '抵達',
       badge: 'transit', badgeLabel: 'DAY 2',
       title: '抵達阿姆斯特丹',
-      theme: 'Amsterdam',
+      theme: '抵達',
       events: [
         {
           time: '07:40', type: 'flight', dotType: 'flight',
           evType: '抵達阿姆斯特丹 · CI73',
           title: 'Arrive AMS · Check-in Hotel',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
+        },
+        {
+          time: '下午', type: 'default', dotType: 'default',
+          evType: '觀光',
+          title: '運河遊船',
+          hint: '搭乘遊船穿梭阿姆斯特丹的運河網絡，是認識這座城市最美的方式',
         },
         {
           time: '下午', type: 'food', dotType: 'food',
@@ -73,7 +83,7 @@ const TRIP = {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Amsterdam',
-          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
+          hint: "Eric's、Ryan's、Michael's families",
         },
       ],
     },
@@ -82,13 +92,13 @@ const TRIP = {
     {
       tab: '7/14', tabSub: '梵谷',
       badge: 'normal', badgeLabel: 'DAY 3',
-      title: '博物館廣場・九街',
-      theme: 'Amsterdam',
+      title: '梵谷博物館・九街',
+      theme: '梵谷',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '博物館',
-          title: '博物館廣場・梵谷博物館',
+          evType: '博物館 · Art',
+          title: '梵谷博物館',
           en: 'Van Gogh Museum',
           img: 'https://www.vangoghmuseum.nl/assets/9d8ff7b6-f3ae-42d7-ae40-f4886ebd4b95?w=900&h=1671&x=1158&y=568&cropWidth=1316&cropHeight=2352&format=webp&c=56cadd4dc32684fe97fbd438bc587d5df3a3a32975445715990df2324b6fe41b',
           address: 'Museumplein 6, 1071 DJ Amsterdam',
@@ -98,7 +108,7 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '購物・散步',
+          evType: '購物・散步 · Site',
           title: '九街',
           en: 'De Negen Straatjes',
           img: 'https://de9straatjes.nl/contents/images/kaart.webp',
@@ -111,14 +121,14 @@ const TRIP = {
 
     // ── DAY 4 · 7/15 Wed · 風車村 ──
     {
-      tab: '7/15', tabSub: '風車村',
+      tab: '7/15', tabSub: '風車',
       badge: 'normal', badgeLabel: 'DAY 4',
       title: 'Zaanse Schans 風車村',
-      theme: 'Amsterdam',
+      theme: '風車',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '景點 · 半日遊',
+          evType: '景點 · 半日遊 · Site',
           title: 'Zaanse Schans 風車村',
           img: 'https://www.dezaanseschans.nl/wp-content/uploads/2024/06/Zaanse-Schans-x-ZEB-69.jpg',
           address: 'Schansend 7, 1509 AW Zaandam',
@@ -134,7 +144,7 @@ const TRIP = {
       tab: '7/16', tabSub: '單車',
       badge: 'normal', badgeLabel: 'DAY 5',
       title: '租腳踏車逛市區',
-      theme: 'Amsterdam',
+      theme: '單車',
       events: [
         {
           time: '全天', type: 'default', dotType: 'default',
@@ -148,10 +158,10 @@ const TRIP = {
 
     // ── DAY 6 · 7/17 Fri · 前往 Bremen ──
     {
-      tab: '7/17', tabSub: 'Bremen',
+      tab: '7/17', tabSub: '不來梅',
       badge: 'transit', badgeLabel: 'DAY 6',
       title: '取租車・前往 Bremen',
-      theme: 'Bremen',
+      theme: '不來梅',
       events: [
         {
           time: '上午', type: 'drive', dotType: 'drive',
@@ -161,24 +171,34 @@ const TRIP = {
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
+          time: '下午', type: 'sight', dotType: 'sight',
+          evType: '科學博物館 · Museum',
+          title: '不來梅宇宙館',
+          en: 'Universum Bremen',
+          img: 'https://universum-bremen.de/wp-content/uploads/2025/04/Universum_Bremen_Dauerausstellungsgebaeude_Sonnenschein_mit_Wiese.jpg',
+          address: 'Wiener Straße 1, 28359 Bremen, Germany',
+          hint: '外觀形似巨大銀蛤的科學博物館，室內包含科技、人類與自然三大互動展區。互動性極強，非常適合全家人一起體驗',
+          link: { url: 'https://share.google/ZzEJ9TSzTLvIBWlfY', label: 'Google Maps ↗' },
+        },
+        {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Bremen',
-          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
+          hint: "Eric's、Ryan's、Michael's families",
         },
       ],
     },
 
     // ── DAY 7 · 7/18 Sat · Bremen 舊城 + 前往 Berlin ──
     {
-      tab: '7/18', tabSub: 'Bremen',
-      badge: 'normal', badgeLabel: 'DAY 7',
+      tab: '7/18', tabSub: '柏林',
+      badge: 'transit', badgeLabel: 'DAY 7',
       title: 'Bremen 舊城區・前往柏林',
-      theme: 'Bremen',
+      theme: '柏林',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '舊城區散步',
+          evType: '舊城區散步 · Site',
           title: 'Bremen 舊城區',
           hint: '探索中世紀市政廳、羅蘭雕像與布萊梅音樂家雕塑，UNESCO 世界文化遺產',
           tags: [{ text: '步行即可遊覽', cls: 'tag-note' }],
@@ -203,7 +223,7 @@ const TRIP = {
       tab: '7/19', tabSub: '集合',
       badge: 'normal', badgeLabel: 'DAY 8',
       title: '全員集合・布蘭登堡門',
-      theme: 'Berlin',
+      theme: '集合',
       events: [
         {
           time: '上午', type: 'flight', dotType: 'flight',
@@ -213,7 +233,7 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '地標',
+          evType: '地標 · Site',
           title: '布蘭登堡門',
           en: 'Brandenburg Gate',
           img: 'https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_xl_2x/private/image/brandenburger_tor_fruehling_650696492_gettyimages_sborisov.jpg.webp?itok=z475Fl4U',
@@ -225,16 +245,25 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 9 · 7/20 Mon · Boros ──
+    // ── DAY 9 · 7/20 Mon · The Barn + Boros ──
     {
-      tab: '7/20', tabSub: 'Boros',
+      tab: '7/20', tabSub: '柏林',
       badge: 'normal', badgeLabel: 'DAY 9',
-      title: 'Boros 當代藝術收藏館',
-      theme: 'Berlin',
+      title: 'The Barn Coffee・Boros 收藏館',
+      theme: '柏林',
       events: [
         {
+          time: '上午', type: 'food', dotType: 'food',
+          evType: '精品咖啡 · Coffee',
+          title: 'The Barn Coffee',
+          img: 'https://thebarn.de/cdn/shop/files/cafes_THE_BARN_HACKESCHER_MARKT_3_fa12b443-200c-47d3-9ec5-85e82c75f8a6.jpg?v=1691616263&width=1070',
+          address: 'Auguststraße 58, 10115 Berlin, Germany',
+          hint: '柏林精品咖啡的先驅與領航者，堅持單一產區豆與精準的科學化沖煮流程。店內通常禁止筆電與大聲交談，旨在讓顧客專注於咖啡風味',
+          tags: [{ text: '柏林必訪咖啡廳', cls: 'tag-brick' }],
+        },
+        {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '當代藝術',
+          evType: '當代藝術 · Art',
           title: 'Boros 收藏館',
           en: 'Boros Collection',
           img: 'https://boros-collection.com/fileadmin/user_upload/Startseite/Boros-Collection-aussen-gesamt.jpg',
@@ -248,10 +277,10 @@ const TRIP = {
 
     // ── DAY 10 · 7/21 Tue · Scooter + Tempelhof ──
     {
-      tab: '7/21', tabSub: 'Scooter',
+      tab: '7/21', tabSub: '柏林',
       badge: 'normal', badgeLabel: 'DAY 10',
       title: '租 Scooter・Tempelhof 機場公園',
-      theme: 'Berlin',
+      theme: '柏林',
       events: [
         {
           time: '上午', type: 'default', dotType: 'default',
@@ -262,12 +291,12 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '城市公園',
+          evType: '城市公園 · Site',
           title: 'Tempelhof 舊機場公園',
           en: 'Tempelhofer Feld',
-          img: 'https://www.thf-berlin.de/fileadmin/user_upload/THF/Bilder/Tempelhofer_Feld/Tempelhofer_Feld_Sunset.jpg',
+          img: 'https://www.thf-berlin.de/fileadmin/_processed_/2/2/csm_GB_TempelhoferFeld_02Okt21_FotoOleBader-1534_6d3627e3c1.jpg',
           address: 'Tempelhofer Damm, 12101 Berlin',
-          hint: '由舊柏林 Tempelhof 機場改建的巨大城市公園，保留原來的飛機跑道。適合騎車、溜滑板或全家野餐，感受柏林獨特的開闊感',
+          hint: '由舊柏林 Tempelhof 機場改建的巨大城市公園，保留原來的飛機跑道。適合騎車、溜滑板或全家野餐',
           tags: [{ text: '免費入場', cls: 'tag-note' }],
           link: { url: 'https://www.thf-berlin.de/en/your-visit/tempelhof-field', label: '官網 ↗' },
         },
@@ -278,8 +307,8 @@ const TRIP = {
     {
       tab: '7/22', tabSub: '漢堡',
       badge: 'transit', badgeLabel: 'DAY 11',
-      title: '前往漢堡・倉庫城',
-      theme: 'Hamburg',
+      title: '前往漢堡・Miniatur Wunderland',
+      theme: '漢堡',
       events: [
         {
           time: '上午', type: 'drive', dotType: 'drive',
@@ -289,9 +318,9 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '微縮景觀',
+          evType: '微縮景觀 · Museum',
           title: 'Miniatur Wunderland',
-          img: 'https://www.miniatur-wunderland.com/wp-content/uploads/header-wunderland-logo.png',
+          img: 'https://www.miniatur-wunderland.com/imager/contentimages/layout/skandinavien/1333/schweden-kiruna-nacht_bc687f62802525bd2b7f491f2188ec3e.jpg',
           address: 'Kehrwieder 2/Block D, 20457 Hamburg',
           hint: '世界最大鐵道模型博物館，擁有極其精細的微縮城市、日夜交替與機場場景，大人小孩都著迷',
           tags: [{ text: '⚠ 強烈建議提早官網預約', cls: 'tag-warn' }],
@@ -299,12 +328,12 @@ const TRIP = {
         },
         {
           time: '傍晚', type: 'sight', dotType: 'sight',
-          evType: '世界遺產',
+          evType: '世界遺產 · Site',
           title: '倉庫城散步',
           en: 'Speicherstadt',
-          img: 'https://www.hamburg.com/resource/image/19324/landscape_ratio16x9/1000/562/speicherstadt-at-night.jpg',
+          img: 'https://www.hamburg.com/resource/image/23476/landscape_ratio16x9/1240/697/a2c8e13901a16389dfdd26f83b9bad3b/3B43B85F11BD3B0C144732C8C0555333/km1-speicherstadt.jpg',
           address: 'Speicherstadt, 20457 Hamburg',
-          hint: '世界最大的紅磚倉庫區，建於19世紀末，UNESCO 世界文化遺產。傍晚運河倒影非常迷人',
+          hint: '世界最大的紅磚倉庫區，建於 19 世紀末，UNESCO 世界文化遺產。傍晚運河倒影非常迷人',
           link: { url: 'https://www.hamburg.com/visitors/sights/architecture/speicherstadt-19324', label: '官網 ↗' },
         },
         {
@@ -315,12 +344,12 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 12 · 7/23 Thu · 漢堡 → LEGOLAND → Odense ──
+    // ── DAY 12 · 7/23 Thu · 漢堡 → LEGOLAND → Aarhus ──
     {
       tab: '7/23', tabSub: 'LEGO',
       badge: 'transit', badgeLabel: 'DAY 12',
-      title: 'LEGOLAND・前往 Odense',
-      theme: 'Billund',
+      title: 'LEGOLAND・前往 Aarhus',
+      theme: 'LEGO',
       events: [
         {
           time: '上午', type: 'drive', dotType: 'drive',
@@ -330,7 +359,7 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '主題樂園',
+          evType: '主題樂園 · Site',
           title: 'LEGOLAND® Billund Resort',
           img: 'https://www.legoland.dk/media/safbchyj/081-legoland__k1a1579_final_700x500.jpg?format=webp&quality=80&width=720&height=360',
           address: 'Nordmarksvej 9, 7190 Billund, Denmark',
@@ -341,48 +370,40 @@ const TRIP = {
         {
           time: '傍晚', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 LEGOLAND → Odense',
-          hint: '車程約 1.5 小時',
+          title: '開車 LEGOLAND → Aarhus',
+          hint: '車程約 1 小時 10 分',
         },
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
-          title: 'TBD · Odense',
+          title: 'TBD · Aarhus',
         },
       ],
     },
 
-    // ── DAY 13 · 7/24 Fri · Odense → Copenhagen ──
+    // ── DAY 13 · 7/24 Fri · JL Møller + 前往 Copenhagen ──
     {
-      tab: '7/24', tabSub: 'Odense',
+      tab: '7/24', tabSub: '傢俱',
       badge: 'transit', badgeLabel: 'DAY 13',
-      title: 'Odense 安徒生故鄉・抵達哥本哈根',
-      theme: 'Odense',
+      title: 'JL Møller 傢俱廠・前往哥本哈根',
+      theme: '傢俱',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '童話故鄉 · 中繼',
-          title: 'Odense 奧登斯',
-          img: 'https://www.visitodense.com/sites/visitodense.com/files/2022-04/HC_Andersen_Museum_Odense_0.jpg',
-          address: 'Odense, Funen, Denmark',
-          hint: '丹麥第三大城，童話大師安徒生的故鄉，充滿中世紀鵝卵石街道與童話氛圍',
-          link: { url: 'https://www.visitodense.com/', label: '官網 ↗' },
-        },
-        {
-          time: '上午', type: 'sight', dotType: 'sight',
-          evType: '建築・博物館',
-          title: 'H.C. Andersens Hus 安徒生博物館',
-          img: 'https://hcandersenshus.dk/wp-content/uploads/sites/3/2025/09/HCAH_Drone_Sommer_August_2024_BKKLA_15-1024x576.jpg',
-          address: 'H.C. Andersen Haven 1, 5000 Odense, Denmark',
-          hint: '2021年全新開幕，由日本建築大師隈研吾設計。沉浸式音效與多媒體裝置，將童話意象與地景建築完美結合',
-          tags: [{ text: '建議官網預約 · 攜帶耳機體驗', cls: 'tag-info' }],
-          link: { url: 'https://hcandersenshus.dk/en/', label: '官網 ↗' },
+          evType: '設計工廠 · Design',
+          title: 'JL Møller 傢俱廠',
+          en: 'JL Møller',
+          img: 'https://assets.everydayobject.us/wp-content/uploads/2025/07/PXL_20250609_105932898.jpg-%E7%9A%84%E5%89%AF%E6%9C%AC_Easy-Resize.com_-edited.jpg',
+          address: 'Oddervej 202, 8270 Højbjerg, Denmark',
+          hint: '丹麥國寶級手工椅品牌，以精湛的木工與編織工藝聞名，是北歐設計愛好者的朝聖地',
+          tags: [{ text: '需事先預約參訪', cls: 'tag-warn' }],
+          link: { url: 'https://www.jlm.dk/', label: '官網 ↗' },
         },
         {
           time: '下午', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 Odense → Copenhagen',
-          hint: '車程約 2 小時',
+          title: '開車 Aarhus → Copenhagen',
+          hint: '車程約 2 小時 45 分',
         },
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
@@ -392,16 +413,16 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 14 · 7/25 Sat · 路易斯安那 ──
+    // ── DAY 14 · 7/25 Sat · 路易斯安那 + April Coffee ──
     {
-      tab: '7/25', tabSub: '路易安',
+      tab: '7/25', tabSub: '藝術',
       badge: 'normal', badgeLabel: 'DAY 14',
-      title: '路易斯安那現代藝術博物館',
-      theme: 'Copenhagen',
+      title: '路易斯安那博物館・April Coffee',
+      theme: '藝術',
       events: [
         {
           time: '全天', type: 'sight', dotType: 'sight',
-          evType: '博物館 · 當代藝術',
+          evType: '博物館 · Art',
           title: '路易斯安那現代藝術博物館',
           en: 'Louisiana Museum of Modern Art',
           img: 'https://louisiana.dk/wp-content/uploads/2020/08/2015_06_01_Louisiana_Genrebilleder_101-1-1600x1067.jpg',
@@ -410,46 +431,54 @@ const TRIP = {
           tags: [{ text: '建議預留至少 3 小時', cls: 'tag-note' }],
           link: { url: 'https://louisiana.dk/en/', label: '官網 ↗' },
         },
+        {
+          time: '下午', type: 'food', dotType: 'food',
+          evType: '精品咖啡 · Coffee',
+          title: 'April Coffee',
+          img: 'https://www.aprilcoffeeroasters.com/cdn/shop/files/Screenshot2025-08-13at13.57.04.png?v=1755086248&width=2048',
+          address: 'Ryesgade 116, 2100 Copenhagen, Denmark',
+          hint: '由 Patrik Rolf 創立的頂尖烘豆品牌，以簡約美學與極致的淺焙風味享譽國際。Showroom 空間設計也是視覺享受',
+          link: { url: 'https://maps.app.goo.gl/G3eLnJQmeAhKAjME8', label: 'Google Maps ↗' },
+        },
       ],
     },
 
-    // ── DAY 15 · 7/26 Sun · 跨橋至瑞典馬爾默 + World of Volvo ──
+    // ── DAY 15 · 7/26 Sun · 跨橋至馬爾默 + Prolog Coffee ──
     {
-      tab: '7/26', tabSub: '馬爾默',
+      tab: '7/26', tabSub: '跨海',
       badge: 'transit', badgeLabel: 'DAY 15',
-      title: '跨海至瑞典馬爾默・World of Volvo',
-      theme: 'Malmö / Gothenburg',
+      title: '開車跨橋至瑞典馬爾默・Prolog Coffee',
+      theme: '跨海',
       events: [
         {
-          time: '全天', type: 'drive', dotType: 'drive',
+          time: '上午', type: 'drive', dotType: 'drive',
           evType: '自駕 · 跨橋',
           title: '開車跨越厄勒海峽大橋至瑞典馬爾默',
           hint: '跨越壯觀的 Øresund Bridge 進入瑞典，抵達馬爾默 (Malmö) 探索這座充滿設計感的城市',
           tags: [{ text: '🇸🇪 跨越丹麥—瑞典大橋', cls: 'tag-info' }],
         },
         {
-          time: '(待定)', type: 'sight', dotType: 'sight',
-          evType: '品牌展覽 · Michael 單獨考慮',
-          title: 'World of Volvo（哥德堡）',
-          img: 'https://www.worldofvolvo.com/globalassets/visual/wov-exterior--interior/wov_exterior_retouch_20240418_dji_0077-small.jpg?maxwidth=1920&quality=80',
-          address: 'Valhallagatan 1, 412 51 Göteborg, Sweden',
-          hint: '2024 年開幕的 Volvo 品牌中心，結合歷史、設計、創新與北歐生活方式。哥德堡距馬爾默約 2.5 小時，Michael 可考慮單獨前往',
-          tags: [{ text: '路線待確認', cls: 'tag-warn' }],
-          link: { url: 'https://www.worldofvolvo.com/', label: '官網 ↗' },
+          time: '下午', type: 'food', dotType: 'food',
+          evType: '精品咖啡 · Coffee',
+          title: 'Prolog Coffee',
+          img: 'https://cdn.shopify.com/s/files/1/0052/3599/8790/files/wholesale-img.jpg?v=1728038129',
+          address: 'Høkerboderne 16, 1712 København',
+          hint: '位於哥本哈根肉類加工區 (Kødbyen) 的精品咖啡館，深受當地人喜愛。咖啡口感純淨，附近有很多特色小店可以一起逛',
+          link: { url: 'https://maps.app.goo.gl/T3bv2fvULBuHdff87', label: 'Google Maps ↗' },
         },
       ],
     },
 
     // ── DAY 16 · 7/27 Mon · Finn Juhl + Coffee Collective ──
     {
-      tab: '7/27', tabSub: 'Juhl',
+      tab: '7/27', tabSub: '傢俱',
       badge: 'normal', badgeLabel: 'DAY 16',
       title: '芬·尤爾故居・Coffee Collective',
-      theme: 'Copenhagen',
+      theme: '傢俱',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '設計 · 故居',
+          evType: '設計故居 · Design',
           title: '芬·尤爾故居',
           en: "Finn Juhl's House",
           img: 'https://ordrupgaard.dk/wp-content/uploads/2021/01/Finn-Juhls-hus-Interioer-1-Foto-Henrik-Soerensen-2.jpg',
@@ -460,7 +489,7 @@ const TRIP = {
         },
         {
           time: '下午', type: 'food', dotType: 'food',
-          evType: '精品咖啡',
+          evType: '精品咖啡 · Coffee',
           title: 'Coffee Collective',
           img: 'https://coffeecollective.dk/cdn/shop/files/carlsberg_byen_high_res.jpg?v=1764586224',
           address: 'Jægersborggade 57, 2200 København N',
@@ -470,16 +499,16 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 17 · 7/28 Tue · 設計博物館 + Illums ──
+    // ── DAY 17 · 7/28 Tue · 設計博物館 + Illums / Hay ──
     {
-      tab: '7/28', tabSub: '設計',
+      tab: '7/28', tabSub: 'Hay',
       badge: 'normal', badgeLabel: 'DAY 17',
-      title: '丹麥設計博物館・設計購物',
-      theme: 'Copenhagen',
+      title: '丹麥設計博物館・Illums & Hay House',
+      theme: 'Hay',
       events: [
         {
           time: '上午', type: 'sight', dotType: 'sight',
-          evType: '博物館',
+          evType: '博物館 · Design',
           title: '丹麥設計博物館',
           en: 'Designmuseum Danmark',
           img: 'https://designmuseum.dk/en/wp-content/uploads/sites/5/2024/12/Danish-Modern_Foto-JoakimZuger-1.jpg',
@@ -489,7 +518,7 @@ const TRIP = {
         },
         {
           time: '下午', type: 'sight', dotType: 'sight',
-          evType: '購物 · 設計',
+          evType: '設計購物 · Design',
           title: 'Illums Bolighus & Hay House',
           img: 'https://www.hay.com/globalassets/blocks/brandsite/footer/hay-stores/denmark/new-order-shelving-system_sowden-bottle_pc-portable_910x1100.jpg?w=900',
           address: 'Amagertorv 10, 1160 København（Illums）',
@@ -499,12 +528,12 @@ const TRIP = {
       ],
     },
 
-    // ── DAY 18 · 7/29 Wed · 單車 + 搭渡輪前往 Münster ──
+    // ── DAY 18 · 7/29 Wed · 單車 + 渡輪至漢堡 ──
     {
-      tab: '7/29', tabSub: '渡輪',
+      tab: '7/29', tabSub: '單車',
       badge: 'transit', badgeLabel: 'DAY 18',
-      title: '騎腳踏車・搭渡輪前往德國明斯特',
-      theme: 'Copenhagen → Münster',
+      title: '騎腳踏車・搭渡輪前往漢堡',
+      theme: '單車',
       events: [
         {
           time: '上午', type: 'default', dotType: 'default',
@@ -514,17 +543,24 @@ const TRIP = {
           tags: [{ text: 'Copenhagen 最後一天', cls: 'tag-note' }],
         },
         {
+          time: '下午', type: 'flight', dotType: 'flight',
+          evType: 'Shampoo\'s family',
+          title: "Shampoo's family 留守哥本哈根",
+          people: ["Shampoo's family"],
+        },
+        {
           time: '下午', type: 'drive', dotType: 'drive',
           evType: '自駕 · 渡輪',
-          title: '哥本哈根 → Rødby 港口 → Scandlines 渡輪 → 德國',
-          hint: '開車至 Rødby 港口，帶車上 Scandlines 渡輪跨越波羅的海，航程約 45 分鐘抵達德國 Puttgarden，再開車前往明斯特',
+          title: '哥本哈根 → Rødby 港口 → Scandlines 渡輪 → 漢堡',
+          hint: '開車至 Rødby 港口帶車上渡輪，航程約 45 分鐘抵達德國 Puttgarden，再開車前往漢堡。全程約 4 小時 20 分',
+          people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
           time: '渡輪', type: 'flight', dotType: 'flight',
-          evType: '跨海渡輪',
+          evType: '跨海渡輪 · Transport',
           title: 'Scandlines Ferry · Rødby → Puttgarden',
-          img: 'https://www.scandlines.com/-/media/scandlines/images/ferries/hybrid-ferry-berlin.jpg',
-          address: 'Rødby 港口（丹麥）→ Puttgarden（德國）',
+          img: 'https://www.scandlines.com/_next/image/?url=https%3A%2F%2Fcomplete-harmony-41d693229b.media.strapiapp.com%2FCouple_with_coffee_cups_on_the_deck_47b84a8cbc.jpg&w=3840&q=75',
+          address: 'Rødby（丹麥）→ Puttgarden（德國）',
           hint: '往返德國與丹麥的跨海汽車渡輪，連人帶車一起上船，航程約 45 分鐘',
           tags: [{ text: '務必提早預訂彈性票 (Flex Ticket)', cls: 'tag-warn' }],
           link: { url: 'https://www.scandlines.com/', label: '官網 ↗' },
@@ -532,17 +568,18 @@ const TRIP = {
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
-          title: 'TBD · Münster 明斯特',
+          title: 'TBD · 漢堡',
+          hint: "Eric's、Ryan's、Michael's families",
         },
       ],
     },
 
-    // ── DAY 19 · 7/30 Thu · Shampoo's 返台 + 其他三家返 AMS ──
+    // ── DAY 19 · 7/30 Thu · 還車 + 返回 Amsterdam ──
     {
-      tab: '7/30', tabSub: '返AMS',
+      tab: '7/30', tabSub: '還車',
       badge: 'transit', badgeLabel: 'DAY 19',
       title: "Shampoo's 返台・三家開車返阿姆斯特丹",
-      theme: 'Amsterdam',
+      theme: '還車',
       events: [
         {
           time: '上午', type: 'flight', dotType: 'flight',
@@ -551,42 +588,33 @@ const TRIP = {
           people: ["Shampoo's family"],
         },
         {
-          time: '上午', type: 'sight', dotType: 'sight',
-          evType: '自行車之都',
-          title: 'Münster 明斯特舊城區',
-          img: 'https://www.germany.travel/media/content/staedte___kultur_1/staedte_und_kultur/muenster/muenster_lambertibrunnen_auf_dem_prinzipalmarkt.jpg',
-          address: 'Münster, Germany',
-          hint: '德國自行車之都，簽署西發里亞和約的和平之城。可沿舊城牆改建的林蔭步道騎腳踏車，或在舊城區品嚐咖啡',
-          link: { url: 'https://www.stadt-muenster.de/en/tourismus/welcome-to-muenster', label: '官網 ↗' },
-        },
-        {
-          time: '午後', type: 'drive', dotType: 'drive',
+          time: '全天', type: 'drive', dotType: 'drive',
           evType: '自駕',
-          title: '開車 Münster → Amsterdam',
-          hint: '車程約 3 小時',
+          title: '開車 漢堡 → Amsterdam',
+          hint: '車程約 4 小時',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
           time: '抵達', type: 'drive', dotType: 'drive',
           evType: '還車',
-          title: '還租車',
+          title: '還租車 · Amsterdam',
           people: ["Eric's family", "Ryan's family", "Michael's family*"],
         },
         {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Amsterdam',
-          hint: 'Eric\'s、Ryan\'s、Michael\'s families',
+          hint: "Eric's、Ryan's、Michael's families",
         },
       ],
     },
 
     // ── DAY 20 · 7/31 Fri · Eric 返台 ──
     {
-      tab: '7/31', tabSub: 'Eric返',
+      tab: '7/31', tabSub: '回程',
       badge: 'transit', badgeLabel: 'DAY 20',
       title: "Eric's family 返台",
-      theme: '返台',
+      theme: '回程',
       events: [
         {
           time: '11:00', type: 'flight', dotType: 'flight',
@@ -598,17 +626,17 @@ const TRIP = {
           time: '住宿', type: 'hotel', dotType: 'hotel',
           evType: '住宿',
           title: 'TBD · Amsterdam',
-          hint: 'Ryan\'s、Michael\'s families',
+          hint: "Ryan's、Michael's families",
         },
       ],
     },
 
     // ── DAY 21 · 8/1 Sat · Eric 抵台 + Ryan & Michael 出發 ──
     {
-      tab: '8/1', tabSub: '分批',
+      tab: '8/1', tabSub: '回程',
       badge: 'transit', badgeLabel: 'DAY 21',
       title: "Eric 抵台・Ryan & Michael 出發",
-      theme: '返台',
+      theme: '回程',
       events: [
         {
           time: '06:15', type: 'flight', dotType: 'flight',
@@ -627,16 +655,16 @@ const TRIP = {
 
     // ── DAY 22 · 8/2 Sun · 全員返台 ──
     {
-      tab: '8/2', tabSub: '返台',
+      tab: '8/2', tabSub: '回程',
       badge: 'transit', badgeLabel: 'DAY 22',
       title: '全員平安返台',
-      theme: '返台',
+      theme: '回程',
       events: [
         {
           time: '06:15', type: 'flight', dotType: 'flight',
           evType: '抵達桃園 · CI74',
           title: 'Arrive TPE 🏠',
-          hint: '北歐之旅圓滿結束。帶著滿滿回憶與一箱設計好物回家！',
+          hint: '北歐設計、單車、咖啡文化之旅圓滿結束。帶著滿滿回憶與一箱設計好物回家！',
           tags: [{ text: 'God rejse ✓ 旅程完成！', cls: 'tag-brick' }],
           people: ["Ryan's family", "Michael's family*"],
         },

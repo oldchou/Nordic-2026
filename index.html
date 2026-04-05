@@ -181,6 +181,12 @@ footer::-webkit-scrollbar { display:none; }
   <h1 id="trip-title"></h1>
   <div class="header-sub" id="trip-subtitle"></div>
   <div class="badges" id="trip-badges"></div>
+  <div style="position:relative;margin-top:0.9rem;">
+    <a id="sheets-link" href="#" target="_blank" rel="noopener"
+       style="font-size:11px;color:rgba(200,216,232,0.75);text-decoration:none;border:1px solid rgba(255,255,255,0.2);border-radius:14px;padding:3px 11px;display:inline-flex;align-items:center;gap:5px;">
+      📊 原始資料
+    </a>
+  </div>
 </header>
 
 <div class="days-nav" id="days-nav"></div>
@@ -204,6 +210,9 @@ function esc(s) {
 function renderHeader() {
   document.getElementById('trip-title').textContent    = TRIP.title;
   document.getElementById('trip-subtitle').textContent = TRIP.subtitle;
+  if (TRIP.sheetsUrl) {
+    document.getElementById('sheets-link').href = TRIP.sheetsUrl;
+  }
   const badgesEl = document.getElementById('trip-badges');
   TRIP.badges.forEach(b => {
     badgesEl.innerHTML += `<div class="badge badge-${esc(b.style)}"><div class="dot"></div>${esc(b.text)}</div>`;
@@ -253,8 +262,9 @@ function renderDays() {
   const footer = document.getElementById('footer');
 
   TRIP.days.forEach((day, i) => {
-    // top tab
-    nav.innerHTML += `<div class="day-tab${i===0?' active':''}" onclick="go(${i})">${esc(day.tab)}<span class="tab-sub">${esc(day.tabSub)}</span></div>`;
+    // top tab — 優先用 theme 作為副標
+    const tabSub = day.theme || day.tabSub;
+    nav.innerHTML += `<div class="day-tab${i===0?' active':''}" onclick="go(${i})">${esc(day.tab)}<span class="tab-sub">${esc(tabSub)}</span></div>`;
 
     // day section
     const eventsHTML = (day.events || []).map(renderEvent).join('');
@@ -268,8 +278,8 @@ function renderDays() {
         <div class="event-list">${eventsHTML}</div>
       </div>`;
 
-    // footer button
-    footer.innerHTML += `<button class="ft-btn${i===0?' active':''}" onclick="go(${i})">${esc(day.tab)}<br>${esc(day.tabSub)}</button>`;
+    // footer button — 同樣用 theme
+    footer.innerHTML += `<button class="ft-btn${i===0?' active':''}" onclick="go(${i})">${esc(day.tab)}<br>${esc(tabSub)}</button>`;
   });
 }
 
