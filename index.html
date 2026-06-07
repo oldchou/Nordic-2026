@@ -152,8 +152,14 @@ header h1 {
   padding: 0 0.5rem; scrollbar-width: none;
   position: sticky; top: 0; z-index: 50;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  justify-content: center;
 }
-.top-nav::-webkit-scrollbar { display: none; }
+.top-nav-inner {
+  display: flex; overflow-x: auto;
+  max-width: 480px; width: 100%;
+  scrollbar-width: none;
+}
+.top-nav-inner::-webkit-scrollbar { display: none; }
 .top-tab {
   flex-shrink: 0; padding: 0.6rem 1rem;
   font-size: 13px; cursor: pointer;
@@ -166,8 +172,11 @@ header h1 {
 .top-tab.active-cph  { color: #B8092C; border-color: #B8092C; font-weight: 500; }
 .top-tab.active-ret  { color: #4A5568; border-color: #4A5568; font-weight: 500; }
 
+/* ── Layout centering (desktop) ──────────────── */
+header { max-width: 480px; margin-left: auto; margin-right: auto; }
+
 /* ── Main Sections ────────────────────────────── */
-main { padding: 0 0 5.5rem; }
+main { padding: 0 0 5.5rem; max-width: 480px; margin: 0 auto; }
 .section { display: none; }
 .section.active { display: block; }
 
@@ -300,8 +309,8 @@ main { padding: 0 0 5.5rem; }
 
 /* Card image */
 .card-img {
-  width: 100%; height: 128px;
-  object-fit: cover; display: block;
+  width: 100%; height: auto;
+  display: block;
 }
 
 /* Card body */
@@ -330,8 +339,8 @@ main { padding: 0 0 5.5rem; }
   background: rgba(255,255,255,0.7);
 }
 .spot-img {
-  width: 100%; height: 110px;
-  object-fit: cover; display: block;
+  width: 100%; height: auto;
+  display: block;
 }
 .spot-body { padding: 8px 10px 9px; }
 .spot-name {
@@ -391,9 +400,13 @@ main { padding: 0 0 5.5rem; }
 footer {
   position: fixed; bottom: 0; left: 0; right: 0;
   background: #fff; border-top: 1px solid #e2e8f0;
-  display: flex; gap: 0; z-index: 100;
+  z-index: 100;
   box-shadow: 0 -1px 4px rgba(0,0,0,0.06);
   padding-bottom: env(safe-area-inset-bottom, 0);
+  display: flex; justify-content: center;
+}
+.footer-inner {
+  display: flex; width: 100%; max-width: 480px;
 }
 .ft-btn {
   flex: 1; background: transparent;
@@ -429,13 +442,13 @@ footer {
 </header>
 
 <!-- Top Navigation -->
-<div class="top-nav" id="top-nav"></div>
+<div class="top-nav"><div class="top-nav-inner" id="top-nav"></div></div>
 
 <!-- Main Content -->
 <main id="main"></main>
 
 <!-- Bottom Footer -->
-<footer id="footer"></footer>
+<footer><div class="footer-inner" id="footer"></div></footer>
 
 <!-- Load data then render -->
 <script src="data.js"></script>
