@@ -113,7 +113,7 @@ const TRIP = {
 
         // ── DAY 3 · 7/14 Tue ──────────────────────
         {
-          date: '7/14', dow: 'Tue', dayNum: 3, title: '國家博物館・運河遊船',
+          date: '7/14', dow: 'Tue', dayNum: 3, title: '國家博物館・九街漫步',
           events: [
             {
               time: '11:00', type: 'sight',
@@ -126,12 +126,6 @@ const TRIP = {
                 tip: '極度熱門，需提早預約。中庭與戶外花園也非常漂亮。',
                 url: 'https://maps.app.goo.gl/LVwPzPpYiA77cBHx6',
               },
-            },
-            {
-              time: '下午', type: 'sight',
-              evType: '遊船',
-              title: '運河遊船',
-              hint: '搭乘遊船穿梭運河網絡，是認識阿姆斯特丹最美的方式之一。',
             },
             {
               time: '隨興', type: 'sight',
@@ -224,42 +218,38 @@ const TRIP = {
               hint: 'Hayato Sumino — Chopin Orbit',
               spot: {
                 nameEn: 'Royal Concertgebouw',
-                img: 'https://d35w1qwxagl33g.cloudfront.net/common/_1750x816_crop_center-center_none/grote-zaal-v2-1750x816.jpg?stamp=2312051057&tag=xl',
+                img: 'https://d35w1qwxagl33g.cloudfront.net/production/_1560x750_crop_center-center_none/Hayato-Sumino-c-Johanna-Berghorn.png?stamp=2603012204&tag=xl',
                 desc: '世界三大音樂廳之一，以極佳音響效果聞名，建築充滿新古典主義的優雅。',
-                tip: null,
-                url: 'https://maps.app.goo.gl/359jWn5QRUFbgzRM7',
+                tip: '建議提早 30–45 分鐘抵達完成驗票與安檢。',
+                url: 'https://www.concertgebouw.nl/en/concerts/41414663-hayato-sumino---chopin-orbit',
               },
             },
           ],
         },
 
         // ── DAY 5 · 7/16 Thu ──────────────────────
+        // 更新：Zaanse Schans / NEMO 移除，改為運河遊船（TBD）
         {
-          date: '7/16', dow: 'Thu', dayNum: 5, title: '風車村・NEMO 頂樓',
+          date: '7/16', dow: 'Thu', dayNum: 5, title: '運河遊船・自由探索',
           events: [
             {
               time: '上午', type: 'sight',
-              evType: '景點・半日遊',
-              title: 'Zaanse Schans 風車村',
+              evType: '遊船・TBD',
+              title: '運河遊船',
+              hint: '時間與航線待確認（TBD）',
               spot: {
-                nameEn: 'Zaanse Schans',
-                img: 'https://www.dezaanseschans.nl/wp-content/uploads/2024/06/Zaanse-Schans-x-ZEB-69.jpg',
-                desc: '荷蘭著名風車村，保留木造建築、風車和傳統工藝。',
-                tip: '建議安排半日遊，可參觀風車內部、乳酪工廠和木鞋工坊。',
-                url: 'https://www.dezaanseschans.nl/zh-hant/',
+                nameEn: 'Amsterdam Canal Cruise',
+                img: 'https://grachten.museum/wp-content/uploads/2025/04/20250120_Grachtenmuseum_RebekkaMell_011-kopie-scaled.webp',
+                desc: '搭乘遊船穿梭阿姆斯特丹的運河網絡，是認識這座城市最美的方式之一。',
+                tip: '有多種航線可選，包含導覽型或自由式電動船，建議出發前確認預約。',
+                url: null,
               },
             },
             {
-              time: '下午', type: 'sight',
-              evType: '景點・免費',
-              title: 'NEMO 博物館頂樓・眺望港灣',
-              spot: {
-                nameEn: 'NEMO Science Museum Rooftop',
-                img: 'https://www.discoverbenelux.com/wp-content/uploads/2025/09/NEMO-Science-Museum_2_Impression-of-the-Terrace_NEMO-Science-Museum.jpg',
-                desc: '頂樓露台免費開放，可以俯瞰整個阿姆斯特丹港口全景。',
-                tip: '不需要買博物館門票，直接走上頂樓即可。',
-                url: 'https://maps.app.goo.gl/ieKoS2d4nZqNRV9h7',
-              },
+              time: '下午', type: 'default',
+              evType: '自由活動',
+              title: '自由探索・補逛景點',
+              hint: '可選：De Hallen 美食市場、Albert Cuyp 市場、Haarlem 近郊一日遊',
             },
           ],
         },
@@ -301,7 +291,7 @@ const TRIP = {
             {
               time: '21:00', type: 'drive',
               evType: '取車',
-              title: '取 Stockholm 租車・Sixt',
+              title: '取 Stockholm 租車・Sixt ARN Airport',
             },
             {
               time: '住宿', type: 'hotel',
@@ -319,23 +309,12 @@ const TRIP = {
         },
 
         // ── DAY 7 · 7/18 Sat ──────────────────────
+        // 更新：移除上午運河遊船，Gröna Lund 移至全天主軸
         {
-          date: '7/18', dow: 'Sat', dayNum: 7, title: '運河遊船・Gröna Lund',
+          date: '7/18', dow: 'Sat', dayNum: 7, title: 'Gröna Lund 遊樂園',
           events: [
             {
               time: '上午', type: 'sight',
-              evType: '遊船',
-              title: '運河遊船',
-              spot: {
-                nameEn: 'Stockholm Canal Cruise',
-                img: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/15/c8/77/9e.jpg',
-                desc: '從水上角度欣賞「北方威尼斯」的城市風光。',
-                tip: '有多種航線可選，建議提早上網劃位。',
-                url: null,
-              },
-            },
-            {
-              time: '下午', type: 'sight',
               evType: '主題樂園',
               title: 'Gröna Lund 遊樂園',
               spot: {
@@ -350,24 +329,13 @@ const TRIP = {
         },
 
         // ── DAY 8 · 7/19 Sun ──────────────────────
+        // 更新：移除 Gamla Stan（移至 7/21），保留市政廳 13:30 + 運河遊船 TBD
         {
-          date: '7/19', dow: 'Sun', dayNum: 8, title: 'Gamla Stan・市政廳',
+          date: '7/19', dow: 'Sun', dayNum: 8, title: '市政廳・運河遊船',
           events: [
             {
-              time: '上午', type: 'sight',
-              evType: '老城',
-              title: 'Gamla Stan 古城',
-              spot: {
-                nameEn: 'Gamla Stan',
-                img: 'https://www.stockholmmuseum.com/wp-content/uploads/stortorget-2.webp',
-                desc: '斯德哥爾摩老城，保留中世紀鵝卵石街道、王宮與古老教堂。',
-                tip: '適合漫步逛文創小店，巷弄較窄，建議穿好走的鞋。',
-                url: 'https://maps.app.goo.gl/uUr23K3ckjBRHqq68',
-              },
-            },
-            {
-              time: '下午', type: 'sight',
-              evType: '地標',
+              time: '13:30', type: 'sight',
+              evType: '地標・已預約',
               title: 'Stockholm City Hall・諾貝爾獎晚宴場地',
               spot: {
                 nameEn: 'Stockholm City Hall',
@@ -375,6 +343,19 @@ const TRIP = {
                 desc: '每年諾貝爾獎晚宴的舉辦地點，以紅磚建築聞名。',
                 tip: '需參加官方導覽才能入內，登塔頂可俯瞰老城全景。',
                 url: 'https://maps.app.goo.gl/2kxbouojNXFt57bH9',
+              },
+            },
+            {
+              time: '下午', type: 'sight',
+              evType: '遊船・TBD',
+              title: '運河遊船',
+              hint: '市政廳參觀後安排，時間與航線待確認（TBD）',
+              spot: {
+                nameEn: 'Stockholm Canal Cruise',
+                img: null,
+                desc: '從水上角度欣賞「北方威尼斯」的城市風光。',
+                tip: '有多種航線可選，建議提早上網劃位。',
+                url: null,
               },
             },
           ],
@@ -416,19 +397,20 @@ const TRIP = {
         },
 
         // ── DAY 10 · 7/21 Tue ─────────────────────
+        // 更新：移除 Skansen，改為 Gamla Stan（從 7/19 移來）
         {
-          date: '7/21', dow: 'Tue', dayNum: 10, title: 'Skansen 露天博物館',
+          date: '7/21', dow: 'Tue', dayNum: 10, title: 'Gamla Stan 古城',
           events: [
             {
-              time: '全天', type: 'sight',
-              evType: '露天博物館',
-              title: 'Skansen',
+              time: '下午', type: 'sight',
+              evType: '老城漫步',
+              title: 'Gamla Stan 古城',
               spot: {
-                nameEn: 'Skansen',
-                img: 'https://i0.wp.com/lillian.tw/wp-content/uploads/20250905161409_0_985b2d.webp?resize=1200%2C801&quality=99&ssl=1',
-                desc: '全球第一座露天博物館，展示瑞典傳統建築與生活，附設北歐動物園。',
-                tip: '非常適合安排半天體驗，園區很大，需較多步行。',
-                url: 'https://www.skansen.se/en/',
+                nameEn: 'Gamla Stan',
+                img: 'https://www.stockholmmuseum.com/wp-content/uploads/stortorget-2.webp',
+                desc: '斯德哥爾摩老城，保留中世紀鵝卵石街道、王宮與古老教堂。',
+                tip: '適合漫步逛文創小店與咖啡廳，巷弄較窄，建議穿好走的鞋。',
+                url: 'https://maps.app.goo.gl/uUr23K3ckjBRHqq68',
               },
             },
           ],
@@ -454,9 +436,14 @@ const TRIP = {
           date: '7/22', dow: 'Wed', dayNum: 11, title: '前往哥本哈根',
           events: [
             {
+              time: '10:00', type: 'default',
+              evType: '退房',
+              title: 'Mysig villa 退房',
+            },
+            {
               time: '11:00', type: 'drive',
               evType: '還車',
-              title: '還 Stockholm 租車・Sixt',
+              title: '還 Stockholm 租車・Sixt Stockholm Central Station',
             },
             {
               time: '12:10', type: 'flight',
@@ -474,7 +461,8 @@ const TRIP = {
             {
               time: '18:30', type: 'drive',
               evType: '取車',
-              title: '取 Copenhagen 租車・Sixt',
+              title: '取 Copenhagen 租車・Sixt Copenhagen City Centre',
+              hint: '→ 旅館約 44 min，約 20:00 抵達',
             },
             {
               time: '住宿', type: 'hotel',
@@ -496,6 +484,10 @@ const TRIP = {
           date: '7/23', dow: 'Thu', dayNum: 12, title: '哥本哈根市區・Tivoli',
           events: [
             {
+              type: 'family',
+              title: 'E 家今日抵達哥本哈根，四家全員再次集合！',
+            },
+            {
               time: '上午', type: 'default',
               evType: '自由活動',
               title: '哥本哈根市區散步',
@@ -511,10 +503,6 @@ const TRIP = {
                 tip: '建議傍晚入場，可看到白天與夜晚點燈後的不同氛圍。',
                 url: 'https://www.tivoli.dk/en',
               },
-            },
-            {
-              type: 'family',
-              title: 'E 家今日抵達哥本哈根，四家全員再次集合！',
             },
           ],
         },
@@ -559,7 +547,7 @@ const TRIP = {
               title: 'Villa Hesnæs',
               spot: {
                 nameEn: 'Villa Hesnæs',
-                img: 'https://villahesnaes.com/wp-content/uploads/2026/01/VH_Logo_House.png',
+                img: null,
                 desc: '丹麥東南海岸的質感設計度假別墅，極度寧靜私密，適合家庭放鬆聚會。',
                 tip: '廚房設備完善，建議提早買好食材，享受純粹的丹麥 Hygge 度假感。',
                 url: 'https://maps.app.goo.gl/6oTCVHahHgmJL87v8',
@@ -569,6 +557,7 @@ const TRIP = {
         },
 
         // ── DAY 15 · 7/26 Sun ─────────────────────
+        // 更新：住宿由 Lynet（TBC）改為 Comwell Aarhus Dolce by Wyndham（已確認）
         {
           date: '7/26', dow: 'Sun', dayNum: 15, title: '安徒生博物館・前往 Aarhus',
           events: [
@@ -579,8 +568,8 @@ const TRIP = {
               hint: '車程約 1 hr 45 min',
             },
             {
-              time: '上午', type: 'sight',
-              evType: '博物館（約 4 hr）',
+              time: '13:30', type: 'sight',
+              evType: '博物館（約 3–4 hr）・已預約',
               title: 'H.C. Andersens Hus 安徒生博物館',
               spot: {
                 nameEn: 'H.C. Andersens Hus',
@@ -599,14 +588,13 @@ const TRIP = {
             {
               time: '住宿', type: 'hotel',
               evType: '住宿',
-              title: 'Lynet selskabs- og kursuscenter',
-              hint: 'TBC',
+              title: 'Comwell Aarhus Dolce by Wyndham',
               spot: {
-                nameEn: 'Lynet selskabs- og kursuscenter',
-                img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDk2NjE1NzA%3D/original/83b0ac4b-9952-43e0-932f-cbe307c942fc.jpeg?im_w=1200',
-                desc: 'Aarhus 近郊 Hinnerup 的大型聚會中心，環境綠意盎然，空間寬敞，適合多組家庭包棟。',
-                tip: '週日入住可提前確認取鑰匙與停車動線。',
-                url: 'https://maps.app.goo.gl/LbGt9HtSMn8TYh1S7',
+                nameEn: 'Comwell Aarhus Dolce by Wyndham',
+                img: null,
+                desc: '位於 Aarhus 市中心的現代化設計酒店，客房全由丹麥品牌 HAY 操刀設計，步行可達 ARoS 藝術博物館。',
+                tip: '飯店提供設計感十足的舒適空間，步行即可抵達市中心與中央車站。',
+                url: 'https://maps.app.goo.gl/A4MhKrCSSHKWGVWD6',
               },
             },
           ],
@@ -622,13 +610,13 @@ const TRIP = {
                 {
                   label: '路線一',
                   summary: 'JL Møller → LEGO House → Copenhagen',
-                  eta: '約 19:00–20:00 抵達哥本哈根',
+                  eta: '約 20:30 抵達哥本哈根',
                   steps: [
                     '🚗 Aarhus → JL Møller（20 min）',
                     '🏭 JL Møller 工廠參觀（1–2 hr）',
                     '🚗 → LEGO House, Billund（1 hr 15 min）',
                     '🧱 LEGO House 參觀（3 hr）',
-                    '🚗 → Copenhagen（全公路，2 hr 45 min）',
+                    '🚗 → Copenhagen（全公路，約 3 hr）',
                   ],
                   spots: [
                     {
@@ -636,7 +624,7 @@ const TRIP = {
                       nameEn: 'JL Møller',
                       img: 'https://assets.everydayobject.us/wp-content/uploads/2025/07/PXL_20250609_105932898.jpg-%E7%9A%84%E5%89%AF%E6%9C%AC_Easy-Resize.com_-edited.jpg',
                       desc: '丹麥國寶級手工椅品牌，以精湛木工與編織工藝聞名，北歐設計愛好者的朝聖地。',
-                      tip: null,
+                      tip: '感受丹麥工匠精神的絕佳機會。',
                       url: 'https://www.jlm.dk/',
                     },
                     {
@@ -652,14 +640,14 @@ const TRIP = {
                 {
                   label: '路線二',
                   summary: 'JL Møller → Aarhus 市區 → 渡輪 → Copenhagen',
-                  eta: '約 17:00 抵達哥本哈根',
+                  eta: '約 21:30 抵達哥本哈根',
                   steps: [
                     '🚗 Aarhus → JL Møller（20 min）',
                     '🏭 JL Møller 工廠參觀（1–2 hr）',
                     '🚗 → Aarhus 市區（20 min）',
                     '🎨 ARoS 現代藝術博物館 或 Den Gamle By（2 hr）',
-                    '⛴ Mols-Linjen 渡輪 Aarhus → Odden（70 min）',
-                    '🚗 Odden → Copenhagen（1 hr 45 min）',
+                    '⛴ 18:30 Mols-Linjen 渡輪 Aarhus → Odden（70 min）',
+                    '🚗 Odden → Copenhagen（1 hr 30 min）',
                   ],
                   spots: [
                     {
@@ -667,15 +655,15 @@ const TRIP = {
                       nameEn: 'JL Møller',
                       img: 'https://assets.everydayobject.us/wp-content/uploads/2025/07/PXL_20250609_105932898.jpg-%E7%9A%84%E5%89%AF%E6%9C%AC_Easy-Resize.com_-edited.jpg',
                       desc: '丹麥國寶級手工椅品牌，以精湛木工與編織工藝聞名，北歐設計愛好者的朝聖地。',
-                      tip: null,
+                      tip: '感受丹麥工匠精神的絕佳機會。',
                       url: 'https://www.jlm.dk/',
                     },
                     {
                       name: 'ARoS 現代藝術博物館',
                       nameEn: 'ARoS Aarhus Art Museum',
-                      img: 'https://museums.moc.gov.tw/Upload/CkImages/483F8FA1-8DB7-47DF-90B2-6D0409226BF9.jpeg',
+                      img: null,
                       desc: 'Aarhus 地標現代藝術博物館，頂樓「彩虹全景天際圈」是不可錯過的視覺盛宴。',
-                      tip: null,
+                      tip: '走在懸空的彩虹玻璃隧道裡可 360 度俯瞰城市美景。',
                       url: 'https://maps.app.goo.gl/ESb9MKLsXaccDg4r6',
                     },
                     {
@@ -757,14 +745,21 @@ const TRIP = {
         },
 
         // ── DAY 18 · 7/29 Wed ─────────────────────
+        // 更新：Nyhavn 與 Torvehallerne 補上 spot 資訊與圖片
         {
           date: '7/29', dow: 'Wed', dayNum: 18, title: 'Nyhavn・Torvehallerne',
           events: [
             {
-              time: '上午', type: 'default',
-              evType: '漫步',
-              title: 'Nyhavn 運河漫步',
-              hint: '哥本哈根最具代表性的彩色排屋運河，拍照必訪。',
+              time: '上午', type: 'sight',
+              evType: '運河漫步',
+              title: 'Nyhavn 新港',
+              spot: {
+                nameEn: 'Nyhavn',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Nyhavn_MichaD.jpg',
+                desc: '哥本哈根最具代表性的歷史運河，兩側排滿 17–18 世紀彩色濱海磚房，曾是安徒生的居住地。',
+                tip: '運河兩旁開滿露天餐廳與酒吧，上午人較少，適合拍照。',
+                url: 'https://maps.app.goo.gl/hkgL2cLxQVVjCURB6',
+              },
             },
             {
               time: '下午', type: 'food',
@@ -772,10 +767,10 @@ const TRIP = {
               title: 'Torvehallerne 市場',
               spot: {
                 nameEn: 'Torvehallerne',
-                img: null,
-                desc: '高級美食市集，有全哥本哈根最好吃的開放式三明治與精品咖啡，也有 Coffee Collective 分店。',
-                tip: null,
-                url: null,
+                img: 'https://files.guidedanmark.org/files/382/307966_Torvehallen.jpg?width=1600&height=727&mode=crop&scale=both&format=webp&webp.quality=60',
+                desc: '高級美食市集，有全哥本哈根最好吃的開放式三明治（Smørrebrød）與精品咖啡，也有 Coffee Collective 分店。',
+                tip: '兩個室內大廳聚集許多攤位，推薦傳統開放式三明治。',
+                url: 'https://maps.app.goo.gl/3ZCn45SC3StjnJN68',
               },
             },
           ],
