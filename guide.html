@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北歐旅行指南 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', system-ui, sans-serif;
+      background: #F0EEE8;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .guide {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* ── Hero ── */
+    .g-hero {
+      background: #0A1628;
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-radius: 16px;
+    }
+    .g-sup {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      opacity: .45;
+      margin-bottom: .875rem;
+    }
+    .g-hero h1 {
+      font-size: clamp(28px, 7vw, 36px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: .6rem;
+    }
+    .g-hero-sub {
+      font-size: 14px;
+      font-weight: 700;
+      opacity: .5;
+      margin-bottom: 1.75rem;
+    }
+    .g-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .g-stat {
+      background: rgba(255,255,255,.08);
+      border: .5px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .g-stat-num {
+      display: block;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .g-stat-label { font-size: 12px; font-weight: 600; opacity: .5; }
+
+    /* ── Blurb ── */
+    .g-blurb {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.375rem 1.5rem;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* ── Country ── */
+    .g-ctry { border-radius: 16px; overflow: hidden; }
+
+    .g-ch {
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .g-ghost {
+      position: absolute;
+      right: -.05em;
+      top: -.1em;
+      font-size: clamp(72px, 18vw, 96px);
+      font-weight: 900;
+      color: rgba(255,255,255,.11);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: -.02em;
+    }
+    .g-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: .45rem;
+    }
+    .g-ch h2 {
+      font-size: clamp(20px, 5vw, 24px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .nl .g-ch { background: #D85400; }
+    .se .g-ch { background: #005F8C; }
+    .dk .g-ch { background: #B8092C; }
+
+    .g-cb {
+      background: #F5F4F0;
+      padding: 1.375rem 1.5rem;
+    }
+    .g-intro {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #1A1A1A;
+      margin-bottom: 1.125rem;
+    }
+
+    /* ── Facts box ── */
+    .g-fx {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.125rem;
+      margin-bottom: 1.125rem;
+      border: .5px solid rgba(0,0,0,.09);
+    }
+    .g-fxtitle {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .65rem;
+    }
+    .nl .g-fxtitle { color: #D85400; }
+    .se .g-fxtitle { color: #005F8C; }
+    .dk .g-fxtitle { color: #B8092C; }
+
+    .g-fxrow {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: .5rem 0;
+      border-bottom: .5px solid rgba(0,0,0,.08);
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1A1A1A;
+    }
+    .g-fxrow:last-child { border-bottom: none; padding-bottom: 0; }
+    .g-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-top: .45em;
+      flex-shrink: 0;
+    }
+    .nl .g-dot { background: #D85400; }
+    .se .g-dot { background: #005F8C; }
+    .dk .g-dot { background: #B8092C; }
+
+    .g-pvlabel {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: .4rem;
+    }
+    .g-pv {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* ── Themes ── */
+    .g-themes {
+      background: #0A1628;
+      color: #fff;
+      padding: 1.75rem 1.5rem;
+      border-radius: 16px;
+    }
+    .g-themes-h {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 1.375rem;
+      text-align: center;
+    }
+    .g-thm {
+      padding-bottom: 1.375rem;
+      margin-bottom: 1.375rem;
+      border-bottom: .5px solid rgba(255,255,255,.1);
+    }
+    .g-thm:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+    .g-thmhd {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: .45rem;
+    }
+    .g-thmbody {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.68);
+    }
+
+    /* ── Missions ── */
+    .g-missions { padding: 1.5rem; }
+    .g-missions h2 {
+      font-size: 20px;
+      font-weight: 900;
+      color: #1A1A1A;
+      margin-bottom: .35rem;
+    }
+    .g-msub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .g-m {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.125rem;
+      margin-bottom: 8px;
+      border: .5px solid rgba(0,0,0,.09);
+    }
+    .g-mn {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+      flex-shrink: 0;
+      color: #D8D6D0;
+    }
+    .g-mc h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1A1A1A;
+      margin-bottom: .35rem;
+    }
+    .g-mc p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #555;
+    }
+    .g-hint {
+      font-size: 13px;
+      color: #888;
+      margin-top: .45rem;
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    .g-footer {
+      background: #0A1628;
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 16px;
+    }
+    .g-footer-big { font-size: 20px; font-weight: 900; margin-bottom: .45rem; }
+    .g-footer-sm { font-size: 12px; opacity: .38; }
+  </style>
+</head>
+<body>
+  <div class="guide">
+
+    <!-- Hero -->
+    <div class="g-hero">
+      <p class="g-sup">Nordic Summer 2026</p>
+      <h1>我們要去<br>北歐了！</h1>
+      <p class="g-hero-sub">荷蘭 · 瑞典 · 丹麥 — 22 天大冒險</p>
+      <div class="g-stats">
+        <div class="g-stat"><span class="g-stat-num">22</span><span class="g-stat-label">天的旅行</span></div>
+        <div class="g-stat"><span class="g-stat-num">3</span><span class="g-stat-label">個國家</span></div>
+        <div class="g-stat"><span class="g-stat-num">9,000+</span><span class="g-stat-label">公里遠</span></div>
+        <div class="g-stat"><span class="g-stat-num">15</span><span class="g-stat-label">人一起</span></div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="g-blurb">
+      今年暑假，四個家庭要一起出發，去一個跟台灣截然不同的地方。在那裡，腳踏車比汽車更重要、設計師會幫公園的椅子想很久、人們有一個專門的詞來描述「窩在一起放鬆」的幸福感。這份指南，幫你在出發前先認識這些地方。
+    </div>
+
+    <!-- Netherlands -->
+    <div class="g-ctry nl">
+      <div class="g-ch">
+        <div class="g-ghost">FIETS</div>
+        <div class="g-tag">第一站 · 阿姆斯特丹</div>
+        <h2>荷蘭<br>自行車比人還多的國家</h2>
+      </div>
+      <div class="g-cb">
+        <p class="g-intro">荷蘭是個很特別的國家：它的很多土地比海平面還低，如果沒有那些大水壩，整個國家可能都沉在水裡。但荷蘭人沒被海水打敗，還把阿姆斯特丹建成一個有 100 條運河的水上城市，讓全國人民騎著腳踏車穿梭其中。</p>
+        <div class="g-fx">
+          <div class="g-fxtitle">你知道嗎</div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>全荷蘭有 <strong>2,300 萬輛腳踏車</strong>，但人口只有 1,800 萬——每個人平均超過一台</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>荷蘭男生平均身高 <strong>182 公分</strong>，是全世界最高的國家</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>阿姆斯特丹有超過 <strong>1,500 座橋</strong>，比威尼斯還多</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>荷蘭有將近四分之一的土地，在<strong>海平面以下</strong></span></div>
+        </div>
+        <div class="g-pvlabel">你會看到</div>
+        <p class="g-pv">運河邊停著密密麻麻的腳踏車、窄窄的老房子歪歪地靠在一起、博物館裡全世界最有名的畫。</p>
+      </div>
+    </div>
+
+    <!-- Sweden -->
+    <div class="g-ctry se">
+      <div class="g-ch">
+        <div class="g-ghost">LAGOM</div>
+        <div class="g-tag">第二站 · 斯德哥爾摩</div>
+        <h2>瑞典<br>Minecraft 就是從這裡誕生的</h2>
+      </div>
+      <div class="g-cb">
+        <p class="g-intro">你玩過 Minecraft 嗎？它是瑞典公司 Mojang 做的，總部就在斯德哥爾摩。其實瑞典出產了很多全世界都在用的東西：IKEA 的家具、Spotify 的音樂、Volvo 的車、H&amp;M 的衣服——還有很多你可能不知道是瑞典的品牌。</p>
+        <div class="g-fx">
+          <div class="g-fxtitle">你知道嗎</div>
+          <div class="g-fxrow"><div class="g-dot"></div><span><strong>Minecraft</strong> 是瑞典公司 Mojang 的作品，創辦人 Notch 在斯德哥爾摩長大</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>斯德哥爾摩建在 <strong>14 個島</strong>上，靠 57 座橋連在一起</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>瑞典有「<strong>自然法</strong>」：任何人都可以在任何土地上自由走路、野餐、紮營</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>瑞典人很愛喝咖啡，有個詞叫 <strong>Fika</strong>，意思是「放下工作，喝杯咖啡」</span></div>
+        </div>
+        <div class="g-pvlabel">你會看到</div>
+        <p class="g-pv">14 個島拼成的城市、一座位在島上的遊樂園、舊城區裡幾百年前就蓋好的彩色房子。</p>
+      </div>
+    </div>
+
+    <!-- Denmark -->
+    <div class="g-ctry dk">
+      <div class="g-ch">
+        <div class="g-ghost">HYGGE</div>
+        <div class="g-tag">第三站 · 哥本哈根</div>
+        <h2>丹麥<br>樂高，就是這裡發明的</h2>
+      </div>
+      <div class="g-cb">
+        <p class="g-intro">LEGO 這個名字來自丹麥文「leg godt」，意思是「好好玩」。1932 年，一個丹麥木工在小鎮開始做木製玩具，幾十年後，他的公司變成全世界最大的玩具公司。除了樂高，丹麥還是全球幸福感最高的國家之一。</p>
+        <div class="g-fx">
+          <div class="g-fxtitle">你知道嗎</div>
+          <div class="g-fxrow"><div class="g-dot"></div><span><strong>LEGO</strong> 源自丹麥文「leg godt」，1932 年在小鎮 Billund 誕生</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>哥本哈根的 Tivoli 遊樂園開幕於 <strong>1843 年</strong>，是全世界最古老的遊樂園之一</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>丹麥連續多年被評為<strong>全球最幸福的國家</strong>之一</span></div>
+          <div class="g-fxrow"><div class="g-dot"></div><span>小美人魚故事的作者<strong>安徒生</strong>就是丹麥人</span></div>
+        </div>
+        <div class="g-pvlabel">你會看到</div>
+        <p class="g-pv">港口旁排排站的彩色房子、180 年歷史的古老遊樂園、和小美人魚銅像的合照。</p>
+      </div>
+    </div>
+
+    <!-- Themes -->
+    <div class="g-themes">
+      <div class="g-themes-h">認識北歐，從三件事開始</div>
+      <div class="g-thm">
+        <div class="g-thmhd">設計，是生活的一部分</div>
+        <p class="g-thmbody">在北歐，「設計」不是奢侈品，是每天都在用的東西。公車站的椅子、路上的路燈、廚房的湯匙——都有人認真想過「怎麼做才又好用又好看」。北歐設計的核心想法是：美麗的東西應該讓所有人都用得到，不是只有有錢人。IKEA 就是這個想法最有名的例子。</p>
+      </div>
+      <div class="g-thm">
+        <div class="g-thmhd">單車，在荷蘭是老大</div>
+        <p class="g-thmbody">在台灣，汽車讓路給人走；在荷蘭，連汽車都要讓路給腳踏車。荷蘭有專屬的腳踏車道、腳踏車紅綠燈、腳踏車停車場，甚至有腳踏車高速公路。荷蘭小孩幾乎從學走路就開始學騎車，騎車上學是日常。</p>
+      </div>
+      <div class="g-thm">
+        <div class="g-thmhd">Hygge，一個找不到中文翻譯的詞</div>
+        <p class="g-thmbody">丹麥文有個詞叫 Hygge（讀音有點像「虛個」）。大概的意思是：和你喜歡的人在一起、放鬆、不趕時間、有點溫暖的那種感覺。點一根蠟燭、喝杯熱巧克力、窩在沙發上聊天——這就是 Hygge。這趟旅行，我們也會有很多這樣的時刻。</p>
+      </div>
+    </div>
+
+    <!-- Missions -->
+    <div class="g-missions">
+      <h2>出發前，你的三個任務</h2>
+      <p class="g-msub">在飛機起飛之前，試著完成這三件事。</p>
+
+      <div class="g-m">
+        <div class="g-mn">01</div>
+        <div class="g-mc">
+          <h3>讀一遍安徒生童話</h3>
+          <p>請爸媽幫你找一本安徒生童話，漫畫版也可以，看過一遍。安徒生是丹麥人，小美人魚、醜小鴨、賣火柴的小女孩都是他寫的。</p>
+          <p class="g-hint">到了哥本哈根，你就會知道這些故事的發源地是什麼感覺。</p>
+        </div>
+      </div>
+
+      <div class="g-m">
+        <div class="g-mn">02</div>
+        <div class="g-mc">
+          <h3>坐 5 張不一樣的椅子</h3>
+          <p>出發前，找機會坐坐看 5 張不同的椅子。記住你最喜歡的那張的感覺——是軟的、硬的、有靠背、還是有點搖的？</p>
+          <p class="g-hint">北歐以椅子設計聞名，去了之後你就知道為什麼了。</p>
+        </div>
+      </div>
+
+      <div class="g-m">
+        <div class="g-mn">03</div>
+        <div class="g-mc">
+          <h3>想好你的野餐菜單</h3>
+          <p>這趟旅行，我們可能會搭小船遊運河，也可能在公園野餐。想一想：如果是你，你想吃什麼、喝什麼？</p>
+          <p class="g-hint">不用太認真，隨便想就好——但要想清楚喔。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="g-footer">
+      <div class="g-footer-big">22 天後，你會變得不一樣。</div>
+      <div class="g-footer-sm">Nordic Summer 2026 · 荷蘭 · 瑞典 · 丹麥</div>
+    </div>
+
+  </div>
+</body>
+</html>
