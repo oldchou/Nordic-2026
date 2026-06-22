@@ -96,18 +96,6 @@ const TRIP = {
               evType: '散步',
               title: '運河區漫步',
             },
-            {
-              time: '視狀況', type: 'sight',
-              evType: '飛行體驗・視當天狀況',
-              title: 'THIS IS HOLLAND 5D 飛行劇院',
-              spot: {
-                nameEn: 'THIS IS HOLLAND',
-                img: 'https://www.thisisholland.com/media/yefmorg1/001_thisisholland.png?format=webp&quality=80&width=720&height=360',
-                desc: '5D 飛行模擬體驗，帶領觀眾飛越荷蘭著名世界遺產與壯麗景觀。',
-                tip: null,
-                url: 'https://maps.app.goo.gl/aVXYchbJWsw6VHFy8',
-              },
-            },
           ],
         },
 
@@ -149,18 +137,6 @@ const TRIP = {
                 desc: '阿姆斯特丹知名精品咖啡烘豆坊，手沖與義式皆優。',
                 tip: '店內空間寬敞現代，旅途中歇腳的好地方。',
                 url: 'https://bocca.nl/en',
-              },
-            },
-            {
-              time: '隨興', type: 'sight',
-              evType: '博物館・視狀況',
-              title: '運河博物館',
-              spot: {
-                nameEn: 'Museum of the Canals',
-                img: 'https://grachten.museum/wp-content/uploads/2025/04/20250120_Grachtenmuseum_RebekkaMell_011-kopie-scaled.webp',
-                desc: '生動講述阿姆斯特丹 17 世紀運河開鑿的歷史與都市規劃。',
-                tip: '展館位於一棟極美的歷史運河屋內，是運河巡禮的絕佳第一站。',
-                url: 'https://maps.app.goo.gl/s3WwEFwekwFW7aZCA',
               },
             },
           ],
@@ -228,7 +204,6 @@ const TRIP = {
         },
 
         // ── DAY 5 · 7/16 Thu ──────────────────────
-        // 更新：Zaanse Schans / NEMO 移除，改為運河遊船（TBD）
         {
           date: '7/16', dow: 'Thu', dayNum: 5, title: '運河遊船・自由探索',
           events: [
@@ -296,7 +271,7 @@ const TRIP = {
             {
               time: '住宿', type: 'hotel',
               evType: '住宿',
-              title: 'Mysig villa',
+              title: 'Mysig Villa',
               spot: {
                 nameEn: 'Mysig Villa',
                 img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1414936847020904908/original/e329d23a-272c-4c65-ac47-8c712db7b515.jpeg?im_w=1200',
@@ -309,7 +284,6 @@ const TRIP = {
         },
 
         // ── DAY 7 · 7/18 Sat ──────────────────────
-        // 更新：移除上午運河遊船，Gröna Lund 移至全天主軸
         {
           date: '7/18', dow: 'Sat', dayNum: 7, title: 'Gröna Lund 遊樂園',
           events: [
@@ -329,7 +303,6 @@ const TRIP = {
         },
 
         // ── DAY 8 · 7/19 Sun ──────────────────────
-        // 更新：移除 Gamla Stan（移至 7/21），保留市政廳 13:30 + 運河遊船 TBD
         {
           date: '7/19', dow: 'Sun', dayNum: 8, title: '市政廳・運河遊船',
           events: [
@@ -397,7 +370,6 @@ const TRIP = {
         },
 
         // ── DAY 10 · 7/21 Tue ─────────────────────
-        // 更新：移除 Skansen，改為 Gamla Stan（從 7/19 移來）
         {
           date: '7/21', dow: 'Tue', dayNum: 10, title: 'Gamla Stan 古城',
           events: [
@@ -438,7 +410,7 @@ const TRIP = {
             {
               time: '10:00', type: 'default',
               evType: '退房',
-              title: 'Mysig villa 退房',
+              title: 'Mysig Villa 退房',
             },
             {
               time: '11:00', type: 'drive',
@@ -462,18 +434,18 @@ const TRIP = {
               time: '18:30', type: 'drive',
               evType: '取車',
               title: '取 Copenhagen 租車・Sixt Copenhagen City Centre',
-              hint: '→ 旅館約 44 min，約 20:00 抵達',
+              hint: '→ 民宿約 1 hr 20 min，約 22:00 抵達',
             },
             {
               time: '住宿', type: 'hotel',
               evType: '住宿',
-              title: 'Olstykke Summer House',
+              title: 'Sæbygaard Estate',
               spot: {
-                nameEn: 'Olstykke Summer House',
-                img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1419366404046125753/original/bc66a5d5-b64a-48d1-9cdd-faa3ce492984.jpeg?im_w=1200',
-                desc: '哥本哈根西北郊 Ølstykke 的獨立度假小木屋，享受丹麥傳統夏季木屋生活。',
-                tip: null,
-                url: 'https://www.airbnb.com/rooms/1419366404046125753',
+                nameEn: 'Sæbygaard Estate',
+                img: null,
+                desc: '哥本哈根西方一小時車程的湖邊度假別墅，古色古香裝潢與寬敞餐廳。',
+                tip: '前往哥本哈根可開車至市區 Park & Ride 再換電車進城。',
+                url: 'https://maps.app.goo.gl/P783P8qxmtx6jKAe6',
               },
             },
           ],
@@ -481,27 +453,46 @@ const TRIP = {
 
         // ── DAY 12 · 7/23 Thu ─────────────────────
         {
-          date: '7/23', dow: 'Thu', dayNum: 12, title: '哥本哈根市區・Tivoli',
+          date: '7/23', dow: 'Thu', dayNum: 12, title: 'Nyhavn・設計博物館・電動船',
           events: [
             {
               type: 'family',
               title: 'E 家今日抵達哥本哈根，四家全員再次集合！',
             },
             {
-              time: '上午', type: 'default',
-              evType: '自由活動',
-              title: '哥本哈根市區散步',
+              time: '上午', type: 'sight',
+              evType: '運河漫步',
+              title: 'Nyhavn 新港',
+              spot: {
+                nameEn: 'Nyhavn',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Nyhavn_MichaD.jpg',
+                desc: '哥本哈根最具代表性的歷史運河，兩側排滿 17–18 世紀彩色濱海磚房，曾是安徒生的居住地。',
+                tip: '運河兩旁開滿露天餐廳與酒吧，上午人較少，適合拍照。',
+                url: 'https://maps.app.goo.gl/hkgL2cLxQVVjCURB6',
+              },
+            },
+            {
+              time: '上午', type: 'sight',
+              evType: '博物館',
+              title: '丹麥設計博物館',
+              spot: {
+                nameEn: 'Designmuseum Danmark',
+                img: 'https://designmuseum.dk/en/wp-content/uploads/sites/5/2024/12/Danish-Modern_Foto-JoakimZuger-1.jpg',
+                desc: '展示丹麥設計的歷史與未來，包含經典的丹麥家具設計。',
+                tip: '博物館商店非常值得一逛，有許多精緻設計良品。',
+                url: 'https://designmuseum.dk/en/',
+              },
             },
             {
               time: '下午', type: 'sight',
-              evType: '主題樂園',
-              title: 'Tivoli Gardens 遊樂園',
+              evType: '自駕遊船',
+              title: 'FriendShips 自駕電動野餐船',
               spot: {
-                nameEn: 'Tivoli Gardens',
-                img: 'https://cdn.tivoli.dk/media/z3sp523z/aftenstemning-koncertsalen-tivoli-2023-14666358.jpg?height=960&width=1920&format=webp',
-                desc: '全球最古老遊樂園之一，夏日晚上燈光美得像夢境，是華特迪士尼樂園的靈感來源。',
-                tip: '建議傍晚入場，可看到白天與夜晚點燈後的不同氛圍。',
-                url: 'https://www.tivoli.dk/en',
+                nameEn: 'FriendShips',
+                img: 'https://www.friendships.dk/wp-content/uploads/FriendShips_Copenhagen_ElectricRentalBoats_background_mobile-scaled.jpg',
+                desc: '免駕照自駕野餐電動船，沿 Christianshavn 精緻運河風景遊覽。',
+                tip: '租 2 小時最能享受，自備肉桂捲與飲料在船上野餐，需提前預約。',
+                url: 'https://friendships.dk/',
               },
             },
           ],
@@ -509,18 +500,31 @@ const TRIP = {
 
         // ── DAY 13 · 7/24 Fri ─────────────────────
         {
-          date: '7/24', dow: 'Fri', dayNum: 13, title: '路易斯安那現代藝術博物館',
+          date: '7/24', dow: 'Fri', dayNum: 13, title: 'Strøget・丹麥設計購物・Torvehallerne',
           events: [
             {
-              time: '全天', type: 'sight',
-              evType: '博物館',
-              title: '路易斯安那現代藝術博物館',
+              time: '上午', type: 'sight',
+              evType: '設計購物',
+              title: 'Illums Bolighus & Hay House',
+              hint: 'Strøget 購物大街',
               spot: {
-                nameEn: 'Louisiana Museum of Modern Art',
-                img: 'https://louisiana.dk/wp-content/uploads/2020/08/2015_06_01_Louisiana_Genrebilleder_101-1-1600x1067.jpg',
-                desc: '被譽為世界最美的博物館之一，藝術、建築與海岸景觀完美融合。',
-                tip: '從哥本哈根搭火車約 40 分鐘。建議預留至少三小時參觀。',
-                url: 'https://louisiana.dk/en/',
+                nameEn: 'Illums Bolighus & Hay House',
+                img: 'https://www.hay.com/globalassets/blocks/brandsite/footer/hay-stores/denmark/new-order-shelving-system_sowden-bottle_pc-portable_910x1100.jpg?w=900',
+                desc: '哥本哈根最頂級設計百貨 Illums 與 Hay 旗艦店，設計控必訪。',
+                tip: '兩間店位於購物大街上，Hay House 在三樓，景觀極佳。',
+                url: 'https://www.illumsbolighus.com/',
+              },
+            },
+            {
+              time: '下午', type: 'food',
+              evType: '美食市場',
+              title: 'Torvehallerne 市場',
+              spot: {
+                nameEn: 'Torvehallerne',
+                img: 'https://files.guidedanmark.org/files/382/307966_Torvehallen.jpg?width=1600&height=727&mode=crop&scale=both&format=webp&webp.quality=60',
+                desc: '高級美食市集，有全哥本哈根最好吃的開放式三明治（Smørrebrød）與精品咖啡，也有 Coffee Collective 分店。',
+                tip: '兩個室內大廳聚集許多攤位，推薦傳統開放式三明治。',
+                url: 'https://maps.app.goo.gl/3ZCn45SC3StjnJN68',
               },
             },
           ],
@@ -528,18 +532,30 @@ const TRIP = {
 
         // ── DAY 14 · 7/25 Sat ─────────────────────
         {
-          date: '7/25', dow: 'Sat', dayNum: 14, title: 'Villa Hesnæs',
+          date: '7/25', dow: 'Sat', dayNum: 14, title: 'Forest Tower・Villa Hesnæs',
           events: [
             {
               time: '上午', type: 'default',
               evType: '退房',
-              title: 'Olstykke Summer House 退房',
+              title: 'Sæbygaard Estate 退房',
+            },
+            {
+              time: '上午', type: 'sight',
+              evType: '景觀塔',
+              title: 'Forest Tower（Skovtårnet）',
+              spot: {
+                nameEn: 'Forest Tower',
+                img: null,
+                desc: null,
+                tip: null,
+                url: 'https://maps.app.goo.gl/PRkQuygo7JTkAmHy9',
+              },
             },
             {
               time: '下午', type: 'drive',
               evType: '自駕',
-              title: 'Copenhagen → Villa Hesnæs',
-              hint: '車程約 1 hr 15 min',
+              title: '前往 Villa Hesnæs',
+              hint: '車程約 1 hr 40 min',
             },
             {
               time: '住宿', type: 'hotel',
@@ -557,7 +573,6 @@ const TRIP = {
         },
 
         // ── DAY 15 · 7/26 Sun ─────────────────────
-        // 更新：住宿由 Lynet（TBC）改為 Comwell Aarhus Dolce by Wyndham（已確認）
         {
           date: '7/26', dow: 'Sun', dayNum: 15, title: '安徒生博物館・前往 Aarhus',
           events: [
@@ -591,7 +606,7 @@ const TRIP = {
               title: 'Comwell Aarhus Dolce by Wyndham',
               spot: {
                 nameEn: 'Comwell Aarhus Dolce by Wyndham',
-                img: null,
+                img: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFefuDhRLpU-Smym0eaV7OWQBeXwVkIWcAi3StT4GeTcdkZcLp3merqcz7wAT77AHhUx3SMyEY72qRts64WTcw9BDWyKN9fR8mIOJNXwuRBzUf8WKUrNpa_VIAU4w3tfEw2-fm9mA=s1360-w1360-h1020-rw',
                 desc: '位於 Aarhus 市中心的現代化設計酒店，客房全由丹麥品牌 HAY 操刀設計，步行可達 ARoS 藝術博物館。',
                 tip: '飯店提供設計感十足的舒適空間，步行即可抵達市中心與中央車站。',
                 url: 'https://maps.app.goo.gl/A4MhKrCSSHKWGVWD6',
@@ -692,7 +707,7 @@ const TRIP = {
               title: 'Kastrup Airbnb',
               spot: {
                 nameEn: 'Kastrup Airbnb',
-                img: null,
+                img: 'https://a0.muscache.com/im/pictures/airflow/Hosting-1218575064688474898/original/435c4da8-fe75-44f5-90ae-cb04ab597212.jpg?im_w=1200',
                 desc: '鄰近哥本哈根機場的寬敞包棟民宿，自駕取還車與搭機前後的理想落腳點。',
                 tip: null,
                 url: 'https://maps.app.goo.gl/RJqnW4LrEhYDPQ4U8',
@@ -703,74 +718,37 @@ const TRIP = {
 
         // ── DAY 17 · 7/28 Tue ─────────────────────
         {
-          date: '7/28', dow: 'Tue', dayNum: 17, title: '丹麥設計博物館・電動船・設計購物',
+          date: '7/28', dow: 'Tue', dayNum: 17, title: '路易斯安那現代藝術博物館',
           events: [
             {
-              time: '上午', type: 'sight',
+              time: '全天', type: 'sight',
               evType: '博物館',
-              title: '丹麥設計博物館',
+              title: '路易斯安那現代藝術博物館',
               spot: {
-                nameEn: 'Designmuseum Danmark',
-                img: 'https://designmuseum.dk/en/wp-content/uploads/sites/5/2024/12/Danish-Modern_Foto-JoakimZuger-1.jpg',
-                desc: '展示丹麥設計的歷史與未來，包含經典的丹麥家具設計。',
-                tip: '博物館商店非常值得一逛，有許多精緻設計良品。',
-                url: 'https://designmuseum.dk/en/',
-              },
-            },
-            {
-              time: '下午', type: 'sight',
-              evType: '自駕遊船',
-              title: 'FriendShips 自駕電動野餐船',
-              spot: {
-                nameEn: 'FriendShips',
-                img: 'https://www.friendships.dk/wp-content/uploads/FriendShips_Copenhagen_ElectricRentalBoats_background_mobile-scaled.jpg',
-                desc: '免駕照自駕野餐電動船，沿 Christianshavn 精緻運河風景遊覽。',
-                tip: '租 2 小時最能享受，自備肉桂捲與飲料在船上野餐，需提前預約。',
-                url: 'https://friendships.dk/',
-              },
-            },
-            {
-              time: '下午', type: 'sight',
-              evType: '設計購物',
-              title: 'Illums Bolighus & Hay House',
-              spot: {
-                nameEn: 'Illums Bolighus & Hay House',
-                img: 'https://www.hay.com/globalassets/blocks/brandsite/footer/hay-stores/denmark/new-order-shelving-system_sowden-bottle_pc-portable_910x1100.jpg?w=900',
-                desc: '哥本哈根最頂級設計百貨 Illums 與 Hay 旗艦店，設計控必訪。',
-                tip: '兩間店位於購物大街上，Hay House 在三樓，景觀極佳。',
-                url: 'https://www.illumsbolighus.com/',
+                nameEn: 'Louisiana Museum of Modern Art',
+                img: 'https://louisiana.dk/wp-content/uploads/2020/08/2015_06_01_Louisiana_Genrebilleder_101-1-1600x1067.jpg',
+                desc: '被譽為世界最美的博物館之一，藝術、建築與海岸景觀完美融合。',
+                tip: '從哥本哈根搭火車約 40 分鐘。建議預留至少三小時參觀。',
+                url: 'https://louisiana.dk/en/',
               },
             },
           ],
         },
 
         // ── DAY 18 · 7/29 Wed ─────────────────────
-        // 更新：Nyhavn 與 Torvehallerne 補上 spot 資訊與圖片
         {
-          date: '7/29', dow: 'Wed', dayNum: 18, title: 'Nyhavn・Torvehallerne',
+          date: '7/29', dow: 'Wed', dayNum: 18, title: 'Tivoli Gardens',
           events: [
             {
-              time: '上午', type: 'sight',
-              evType: '運河漫步',
-              title: 'Nyhavn 新港',
+              time: '下午', type: 'sight',
+              evType: '主題樂園',
+              title: 'Tivoli Gardens 遊樂園',
               spot: {
-                nameEn: 'Nyhavn',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Nyhavn_MichaD.jpg',
-                desc: '哥本哈根最具代表性的歷史運河，兩側排滿 17–18 世紀彩色濱海磚房，曾是安徒生的居住地。',
-                tip: '運河兩旁開滿露天餐廳與酒吧，上午人較少，適合拍照。',
-                url: 'https://maps.app.goo.gl/hkgL2cLxQVVjCURB6',
-              },
-            },
-            {
-              time: '下午', type: 'food',
-              evType: '美食市場',
-              title: 'Torvehallerne 市場',
-              spot: {
-                nameEn: 'Torvehallerne',
-                img: 'https://files.guidedanmark.org/files/382/307966_Torvehallen.jpg?width=1600&height=727&mode=crop&scale=both&format=webp&webp.quality=60',
-                desc: '高級美食市集，有全哥本哈根最好吃的開放式三明治（Smørrebrød）與精品咖啡，也有 Coffee Collective 分店。',
-                tip: '兩個室內大廳聚集許多攤位，推薦傳統開放式三明治。',
-                url: 'https://maps.app.goo.gl/3ZCn45SC3StjnJN68',
+                nameEn: 'Tivoli Gardens',
+                img: 'https://cdn.tivoli.dk/media/z3sp523z/aftenstemning-koncertsalen-tivoli-2023-14666358.jpg?height=960&width=1920&format=webp',
+                desc: '全球最古老遊樂園之一，夏日晚上燈光美得像夢境，是華特迪士尼樂園的靈感來源。',
+                tip: '建議傍晚入場，可看到白天與夜晚點燈後的不同氛圍。',
+                url: 'https://www.tivoli.dk/en',
               },
             },
           ],
