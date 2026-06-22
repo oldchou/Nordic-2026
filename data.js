@@ -73,7 +73,7 @@ const TRIP = {
               title: 'Moods Coffee & Brunch',
               spot: {
                 nameEn: 'Moods Coffee & Brunch',
-                img: 'https://moods-amsterdam.nl/wp-content/uploads/2025/05/brunch-new.jpg',
+                img: 'img/moods-coffee.jpg',
                 desc: '超人氣網美風早午餐與精品咖啡店，餐點擺盤精緻美味。',
                 tip: '非常熱門，已提前預約。',
                 url: 'https://maps.app.goo.gl/xzAjhwegGs1D87fE6',
@@ -85,7 +85,7 @@ const TRIP = {
               title: 'De Ware Jacob Boutique Hotel',
               spot: {
                 nameEn: 'De Ware Jacob Boutique Hotel',
-                img: 'https://static.tildacdn.com/tild3264-3564-4265-b134-373133613233/20200504-73A01061-Pa.jpg',
+                img: 'img/de-ware-jacob.jpg',
                 desc: '位於博物館廣場附近的精品酒店，步行即可抵達國家博物館與梵谷博物館。',
                 tip: null,
                 url: 'https://maps.app.goo.gl/R6Lz9rKQ2yBUzDyQ8',
@@ -109,7 +109,7 @@ const TRIP = {
               title: '荷蘭國家博物館',
               spot: {
                 nameEn: 'Rijksmuseum',
-                img: 'https://www.rijksmuseum.nl/assets/147dde9e-c250-4ed9-b941-39800085a4e3?w=2880&h=2165&fx=1190&fy=1235&format=webp&c=e78b1b5d8b026e4a8ba0725cf1b62501ba77f13ac453d9e85cc0eca095be1dbb',
+                img: 'img/rijksmuseum.jpg-c250-4ed9-b941-39800085a4e3?w=2880&h=2165&fx=1190&fy=1235&format=webp&c=e78b1b5d8b026e4a8ba0725cf1b62501ba77f13ac453d9e85cc0eca095be1dbb',
                 desc: '荷蘭最大博物館，收藏林布蘭《夜巡》、維梅爾《倒牛奶的女僕》等黃金時代傑作。',
                 tip: '極度熱門，需提早預約。中庭與戶外花園也非常漂亮。',
                 url: 'https://maps.app.goo.gl/LVwPzPpYiA77cBHx6',
@@ -121,7 +121,7 @@ const TRIP = {
               title: '九街',
               spot: {
                 nameEn: 'De Negen Straatjes',
-                img: 'https://de9straatjes.nl/contents/images/kaart.webp',
+                img: 'img/de-negen-straatjes.webp',
                 desc: '運河區九條小街，充滿獨立精品店、古董店與餐廳。',
                 tip: '漫步挖掘獨特北歐小物，每條巷弄都有驚喜。',
                 url: 'https://de9straatjes.nl/en',
@@ -133,7 +133,7 @@ const TRIP = {
               title: 'Bocca Coffee',
               spot: {
                 nameEn: 'Bocca Coffee',
-                img: 'https://bocca.nl/cdn/shop/files/Bocca-Kerkstraat-2-Jasper-de-Waal-Photography-1-1350x901.webp?v=1742835373&width=1296',
+                img: 'img/bocca-coffee.jpg',
                 desc: '阿姆斯特丹知名精品咖啡烘豆坊，手沖與義式皆優。',
                 tip: '店內空間寬敞現代，旅途中歇腳的好地方。',
                 url: 'https://bocca.nl/en',
@@ -152,7 +152,7 @@ const TRIP = {
               title: '梵谷博物館',
               spot: {
                 nameEn: 'Van Gogh Museum',
-                img: 'https://www.vangoghmuseum.nl/assets/9d8ff7b6-f3ae-42d7-ae40-f4886ebd4b95?w=900&h=1671&x=1158&y=568&cropWidth=1316&cropHeight=2352&format=webp&c=56cadd4dc32684fe97fbd438bc587d5df3a3a32975445715990df2324b6fe41b',
+                img: 'img/van-gogh.jpg',
                 desc: '全世界收藏最多梵谷畫作的博物館，必訪。',
                 tip: '需儘早預約，旺季時段極度搶手。',
                 url: 'https://maps.app.goo.gl/1mjz8vnywgtZrsfNA',
@@ -169,7 +169,7 @@ const TRIP = {
               title: '（路線二）Albert Cuyp 市場買野餐食材',
               spot: {
                 nameEn: 'Albert Cuyp Market',
-                img: 'https://www.bring-you.info/imgs/2021/04/amsterdam-attractions-78.jpg',
+                img: 'img/albert-cuyp.jpg',
                 desc: '阿姆斯特丹最大露天市場，必嚐現烤焦糖煎餅等庶民美食。',
                 tip: '大團體請注意看管隨身財物。',
                 url: 'https://maps.app.goo.gl/GXPxCb5ZW2Dqx13K6',
@@ -181,7 +181,7 @@ const TRIP = {
               title: 'Vondelpark 草地野餐',
               spot: {
                 nameEn: 'Vondelpark',
-                img: 'https://vondelpark-amsterdam.com/img/aerial-view-amsterdam-vondelpark.jpg',
+                img: 'img/vondelpark.webp',
                 desc: '城市心臟地帶的大公園，氛圍悠閒，適合在草地上放鬆野餐。',
                 tip: null,
                 url: 'https://maps.app.goo.gl/3bo86px4qpJBB4sv7',
@@ -194,7 +194,7 @@ const TRIP = {
               hint: 'Hayato Sumino — Chopin Orbit',
               spot: {
                 nameEn: 'Royal Concertgebouw',
-                img: 'https://d35w1qwxagl33g.cloudfront.net/production/_1560x750_crop_center-center_none/Hayato-Sumino-c-Johanna-Berghorn.png?stamp=2603012204&tag=xl',
+                img: 'img/concertgebouw.avif',
                 desc: '世界三大音樂廳之一，以極佳音響效果聞名，建築充滿新古典主義的優雅。',
                 tip: '建議提早 30–45 分鐘抵達完成驗票與安檢。',
                 url: 'https://www.concertgebouw.nl/en/concerts/41414663-hayato-sumino---chopin-orbit',
@@ -214,7 +214,7 @@ const TRIP = {
               hint: '時間與航線待確認（TBD）',
               spot: {
                 nameEn: 'Amsterdam Canal Cruise',
-                img: 'https://grachten.museum/wp-content/uploads/2025/04/20250120_Grachtenmuseum_RebekkaMell_011-kopie-scaled.webp',
+                img: 'img/canal-museum.jpg',
                 desc: '搭乘遊船穿梭阿姆斯特丹的運河網絡，是認識這座城市最美的方式之一。',
                 tip: '有多種航線可選，包含導覽型或自由式電動船，建議出發前確認預約。',
                 url: null,
@@ -274,7 +274,7 @@ const TRIP = {
               title: 'Mysig Villa',
               spot: {
                 nameEn: 'Mysig Villa',
-                img: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1414936847020904908/original/e329d23a-272c-4c65-ac47-8c712db7b515.jpeg?im_w=1200',
+                img: 'img/mysig-villa.jpg',
                 desc: '斯德哥爾摩的舒適溫馨獨棟別墅，完美體驗道地北歐居家生活。',
                 tip: null,
                 url: 'https://www.airbnb.com.tw/rooms/1414936847020904908',
@@ -293,7 +293,7 @@ const TRIP = {
               title: 'Gröna Lund 遊樂園',
               spot: {
                 nameEn: 'Gröna Lund',
-                img: 'https://www.sweetsweden.com/wp-content/uploads/Vybild-Kv%C3%A4ll-2017-01-1200x799.jpg',
+                img: 'img/gronalund.jpg',
                 desc: '擁有百年歷史的主題樂園，夏天常舉辦戶外演唱會，充滿歡樂的復古氛圍。',
                 tip: '傍晚入園可同時看日夜美景。',
                 url: 'https://www.gronalund.com/en',
@@ -312,7 +312,7 @@ const TRIP = {
               title: 'Stockholm City Hall・諾貝爾獎晚宴場地',
               spot: {
                 nameEn: 'Stockholm City Hall',
-                img: 'https://rosy-arts.com/wp-content/uploads/2024/07/%E6%96%AF%E5%BE%B7%E5%93%A5%E7%88%BE%E6%91%A9%E5%B8%82%E6%94%BF%E5%BB%B3-%E8%97%8D%E5%BB%B3-1536x1152.jpg',
+                img: 'img/stockholm-city-hall.jpg',
                 desc: '每年諾貝爾獎晚宴的舉辦地點，以紅磚建築聞名。',
                 tip: '需參加官方導覽才能入內，登塔頂可俯瞰老城全景。',
                 url: 'https://maps.app.goo.gl/2kxbouojNXFt57bH9',
@@ -325,7 +325,7 @@ const TRIP = {
               hint: '市政廳參觀後安排，時間與航線待確認（TBD）',
               spot: {
                 nameEn: 'Stockholm Canal Cruise',
-                img: null,
+                img: 'img/stockholm-canal.jpg',
                 desc: '從水上角度欣賞「北方威尼斯」的城市風光。',
                 tip: '有多種航線可選，建議提早上網劃位。',
                 url: null,
@@ -344,7 +344,7 @@ const TRIP = {
               title: 'Vasa Museum 沈船博物館',
               spot: {
                 nameEn: 'Vasa Museum',
-                img: 'https://www.vasamuseet.se/globalassets/vasamuseet/bilder/start/vm_foto_lovisa-bramming_03.jpg',
+                img: 'img/vasa-museum.jpg',
                 desc: '展示世界上唯一保存完好的 17 世紀戰艦「瓦薩號」，瑞典最熱門博物館。',
                 tip: '建議一開館就入場避開人潮，館內導覽影片非常值得觀看。',
                 url: 'https://maps.app.goo.gl/ZW6etCVYhuhiSaY37',
@@ -356,7 +356,7 @@ const TRIP = {
               title: 'Stockholm Subway Art',
               spot: {
                 nameEn: 'Stockholm Subway Art',
-                img: 'https://i0.wp.com/aglobewelltravelled.com/wp-content/uploads/2016/07/Stockholm-Subway-Stations-feature-image.jpg?w=2200&ssl=1',
+                img: 'img/subway-art.jpg',
                 desc: '世界最長地下藝術長廊，多個地鐵站充滿獨特藝術裝置與壁畫。',
                 tip: '最著名車站：T-Centralen、Solna Centrum、Stadion。買一張車票專程拍照即可。',
                 url: null,
@@ -379,7 +379,7 @@ const TRIP = {
               title: 'Gamla Stan 古城',
               spot: {
                 nameEn: 'Gamla Stan',
-                img: 'https://www.stockholmmuseum.com/wp-content/uploads/stortorget-2.webp',
+                img: 'img/gamla-stan.jpg',
                 desc: '斯德哥爾摩老城，保留中世紀鵝卵石街道、王宮與古老教堂。',
                 tip: '適合漫步逛文創小店與咖啡廳，巷弄較窄，建議穿好走的鞋。',
                 url: 'https://maps.app.goo.gl/uUr23K3ckjBRHqq68',
@@ -424,7 +424,7 @@ const TRIP = {
               hint: '抵達 17:58・全程 5 hr 48 min',
               spot: {
                 nameEn: 'Stockholm–Copenhagen X2000',
-                img: 'https://cdn.sj.se/images/hulddl9x/production/97576e942c22d3be2ae24f38e7f9905d1ff01f55-2500x1667.jpg?rect=0,418,2500,833&w=2400&h=800&fm=webp&auto=format',
+                img: 'img/sj-x2000.webp',
                 desc: 'SJ 旗艦高速列車，車廂寬敞、行駛平穩，配有免費 Wi-Fi 與充足行李空間。',
                 tip: null,
                 url: 'https://www.sj.se/en',
@@ -442,7 +442,7 @@ const TRIP = {
               title: 'Sæbygaard Estate',
               spot: {
                 nameEn: 'Sæbygaard Estate',
-                img: null,
+                img: 'img/saebygaard.webp',
                 desc: '哥本哈根西方一小時車程的湖邊度假別墅，古色古香裝潢與寬敞餐廳。',
                 tip: '前往哥本哈根可開車至市區 Park & Ride 再換電車進城。',
                 url: 'https://maps.app.goo.gl/P783P8qxmtx6jKAe6',
@@ -465,7 +465,7 @@ const TRIP = {
               title: 'Nyhavn 新港',
               spot: {
                 nameEn: 'Nyhavn',
-                img: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Nyhavn_MichaD.jpg',
+                img: 'img/nyhavn.jpg',
                 desc: '哥本哈根最具代表性的歷史運河，兩側排滿 17–18 世紀彩色濱海磚房，曾是安徒生的居住地。',
                 tip: '運河兩旁開滿露天餐廳與酒吧，上午人較少，適合拍照。',
                 url: 'https://maps.app.goo.gl/hkgL2cLxQVVjCURB6',
@@ -477,7 +477,7 @@ const TRIP = {
               title: '丹麥設計博物館',
               spot: {
                 nameEn: 'Designmuseum Danmark',
-                img: 'https://designmuseum.dk/en/wp-content/uploads/sites/5/2024/12/Danish-Modern_Foto-JoakimZuger-1.jpg',
+                img: 'img/designmuseum.jpg',
                 desc: '展示丹麥設計的歷史與未來，包含經典的丹麥家具設計。',
                 tip: '博物館商店非常值得一逛，有許多精緻設計良品。',
                 url: 'https://designmuseum.dk/en/',
@@ -489,7 +489,7 @@ const TRIP = {
               title: 'FriendShips 自駕電動野餐船',
               spot: {
                 nameEn: 'FriendShips',
-                img: 'https://www.friendships.dk/wp-content/uploads/FriendShips_Copenhagen_ElectricRentalBoats_background_mobile-scaled.jpg',
+                img: 'img/friendships.jpg',
                 desc: '免駕照自駕野餐電動船，沿 Christianshavn 精緻運河風景遊覽。',
                 tip: '租 2 小時最能享受，自備肉桂捲與飲料在船上野餐，需提前預約。',
                 url: 'https://friendships.dk/',
@@ -509,7 +509,7 @@ const TRIP = {
               hint: 'Strøget 購物大街',
               spot: {
                 nameEn: 'Illums Bolighus & Hay House',
-                img: 'https://www.hay.com/globalassets/blocks/brandsite/footer/hay-stores/denmark/new-order-shelving-system_sowden-bottle_pc-portable_910x1100.jpg?w=900',
+                img: 'img/illums-hay.jpg',
                 desc: '哥本哈根最頂級設計百貨 Illums 與 Hay 旗艦店，設計控必訪。',
                 tip: '兩間店位於購物大街上，Hay House 在三樓，景觀極佳。',
                 url: 'https://www.illumsbolighus.com/',
@@ -521,7 +521,7 @@ const TRIP = {
               title: 'Torvehallerne 市場',
               spot: {
                 nameEn: 'Torvehallerne',
-                img: 'https://files.guidedanmark.org/files/382/307966_Torvehallen.jpg?width=1600&height=727&mode=crop&scale=both&format=webp&webp.quality=60',
+                img: 'img/torvehallerne.jpg',
                 desc: '高級美食市集，有全哥本哈根最好吃的開放式三明治（Smørrebrød）與精品咖啡，也有 Coffee Collective 分店。',
                 tip: '兩個室內大廳聚集許多攤位，推薦傳統開放式三明治。',
                 url: 'https://maps.app.goo.gl/3ZCn45SC3StjnJN68',
@@ -563,7 +563,7 @@ const TRIP = {
               title: 'Villa Hesnæs',
               spot: {
                 nameEn: 'Villa Hesnæs',
-                img: null,
+                img: 'img/villa-hesnaes.jpg',
                 desc: '丹麥東南海岸的質感設計度假別墅，極度寧靜私密，適合家庭放鬆聚會。',
                 tip: '廚房設備完善，建議提早買好食材，享受純粹的丹麥 Hygge 度假感。',
                 url: 'https://maps.app.goo.gl/6oTCVHahHgmJL87v8',
@@ -588,7 +588,7 @@ const TRIP = {
               title: 'H.C. Andersens Hus 安徒生博物館',
               spot: {
                 nameEn: 'H.C. Andersens Hus',
-                img: 'https://hcandersenshus.dk/wp-content/uploads/sites/3/2025/09/HCAH_Drone_Sommer_August_2024_BKKLA_15-1024x576.jpg',
+                img: 'img/andersens-hus.jpg',
                 desc: '2021 年開幕，隈研吾設計。沉浸式音效與多媒體裝置，將童話意象與地景建築完美結合。',
                 tip: '需官網預約；參觀時需佩戴隨附耳機，體驗故事與空間交織的感官之旅。',
                 url: 'https://hcandersenshus.dk/en/',
@@ -606,7 +606,7 @@ const TRIP = {
               title: 'Comwell Aarhus Dolce by Wyndham',
               spot: {
                 nameEn: 'Comwell Aarhus Dolce by Wyndham',
-                img: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFefuDhRLpU-Smym0eaV7OWQBeXwVkIWcAi3StT4GeTcdkZcLp3merqcz7wAT77AHhUx3SMyEY72qRts64WTcw9BDWyKN9fR8mIOJNXwuRBzUf8WKUrNpa_VIAU4w3tfEw2-fm9mA=s1360-w1360-h1020-rw',
+                img: 'img/comwell-aarhus.webp',
                 desc: '位於 Aarhus 市中心的現代化設計酒店，客房全由丹麥品牌 HAY 操刀設計，步行可達 ARoS 藝術博物館。',
                 tip: '飯店提供設計感十足的舒適空間，步行即可抵達市中心與中央車站。',
                 url: 'https://maps.app.goo.gl/A4MhKrCSSHKWGVWD6',
@@ -637,7 +637,7 @@ const TRIP = {
                     {
                       name: 'JL Møller 傢俱廠',
                       nameEn: 'JL Møller',
-                      img: 'https://assets.everydayobject.us/wp-content/uploads/2025/07/PXL_20250609_105932898.jpg-%E7%9A%84%E5%89%AF%E6%9C%AC_Easy-Resize.com_-edited.jpg',
+                      img: 'img/jl-moller.jpg',
                       desc: '丹麥國寶級手工椅品牌，以精湛木工與編織工藝聞名，北歐設計愛好者的朝聖地。',
                       tip: '感受丹麥工匠精神的絕佳機會。',
                       url: 'https://www.jlm.dk/',
@@ -645,7 +645,7 @@ const TRIP = {
                     {
                       name: '樂高之家',
                       nameEn: 'LEGO House',
-                      img: 'https://legohouse.com/media/4clndtgc/1880x1060_1336.jpg',
+                      img: 'img/lego-house.jpg',
                       desc: '樂高品牌的精神中心，設有互動體驗區與微型工廠生產線。',
                       tip: null,
                       url: 'https://legohouse.com/en-gb/',
@@ -668,7 +668,7 @@ const TRIP = {
                     {
                       name: 'JL Møller 傢俱廠',
                       nameEn: 'JL Møller',
-                      img: 'https://assets.everydayobject.us/wp-content/uploads/2025/07/PXL_20250609_105932898.jpg-%E7%9A%84%E5%89%AF%E6%9C%AC_Easy-Resize.com_-edited.jpg',
+                      img: 'img/jl-moller.jpg',
                       desc: '丹麥國寶級手工椅品牌，以精湛木工與編織工藝聞名，北歐設計愛好者的朝聖地。',
                       tip: '感受丹麥工匠精神的絕佳機會。',
                       url: 'https://www.jlm.dk/',
@@ -684,7 +684,7 @@ const TRIP = {
                     {
                       name: 'Den Gamle By 老城博物館',
                       nameEn: 'Den Gamle By',
-                      img: 'https://kayawanderlust.com/wp-content/uploads/2025/04/den-gamle-by-museum-in-aarhus-worth-it.webp',
+                      img: 'img/den-gamle-by.jpg',
                       desc: '完整重現 19 世紀丹麥城鎮街景與生活的露天歷史博物館。',
                       tip: '適合慢步拍照，走進古老傳統店舖感受穿梭時空的北歐歷史魅力。',
                       url: 'https://www.dengamleby.dk/en/',
@@ -692,7 +692,7 @@ const TRIP = {
                     {
                       name: 'Mols-Linjen 渡輪',
                       nameEn: 'Mols-Linjen Ferry',
-                      img: 'https://files.guidedanmark.org/files/484/292237_molslinjen-aarhus-odden-express-3-1024.jpg?width=1600&height=727&mode=crop&scale=both&format=webp&webp.quality=60',
+                      img: 'img/mols-linjen.jpg',
                       desc: 'Aarhus ↔ Odden 高速汽車渡輪，航程約 70 分鐘，船上有餐廳與兒童遊樂區。',
                       tip: '自駕車隊需提前訂妥車位，開船前 20–30 分鐘抵達碼頭排隊。',
                       url: 'https://www.molslinjen.com/',
@@ -707,7 +707,7 @@ const TRIP = {
               title: 'Kastrup Airbnb',
               spot: {
                 nameEn: 'Kastrup Airbnb',
-                img: 'https://a0.muscache.com/im/pictures/airflow/Hosting-1218575064688474898/original/435c4da8-fe75-44f5-90ae-cb04ab597212.jpg?im_w=1200',
+                img: 'img/kastrup-airbnb.avif',
                 desc: '鄰近哥本哈根機場的寬敞包棟民宿，自駕取還車與搭機前後的理想落腳點。',
                 tip: null,
                 url: 'https://maps.app.goo.gl/RJqnW4LrEhYDPQ4U8',
@@ -726,7 +726,7 @@ const TRIP = {
               title: '路易斯安那現代藝術博物館',
               spot: {
                 nameEn: 'Louisiana Museum of Modern Art',
-                img: 'https://louisiana.dk/wp-content/uploads/2020/08/2015_06_01_Louisiana_Genrebilleder_101-1-1600x1067.jpg',
+                img: 'img/louisiana.jpg',
                 desc: '被譽為世界最美的博物館之一，藝術、建築與海岸景觀完美融合。',
                 tip: '從哥本哈根搭火車約 40 分鐘。建議預留至少三小時參觀。',
                 url: 'https://louisiana.dk/en/',
@@ -745,7 +745,7 @@ const TRIP = {
               title: 'Tivoli Gardens 遊樂園',
               spot: {
                 nameEn: 'Tivoli Gardens',
-                img: 'https://cdn.tivoli.dk/media/z3sp523z/aftenstemning-koncertsalen-tivoli-2023-14666358.jpg?height=960&width=1920&format=webp',
+                img: 'img/tivoli.jpg',
                 desc: '全球最古老遊樂園之一，夏日晚上燈光美得像夢境，是華特迪士尼樂園的靈感來源。',
                 tip: '建議傍晚入場，可看到白天與夜晚點燈後的不同氛圍。',
                 url: 'https://www.tivoli.dk/en',
@@ -789,7 +789,7 @@ const TRIP = {
               title: 'The Square Copenhagen',
               spot: {
                 nameEn: 'The Square Copenhagen',
-                img: 'https://www.thesquarecopenhagen.com/dfsmedia/baeefe6bma74df44be8a2bccfb2c57af8e/13325-source/cropsize/1922x900/outputimageformat/AvifImageFormat',
+                img: 'img/the-square.jpg',
                 desc: '哥本哈根市中心市政廳廣場旁的設計酒店，鄰近 Tivoli 與中央車站。',
                 tip: null,
                 url: 'https://www.thesquarecopenhagen.com/',
@@ -829,7 +829,7 @@ const TRIP = {
               title: 'Radisson Blu Hotel Amsterdam Airport',
               spot: {
                 nameEn: 'Radisson Blu Hotel Amsterdam Airport',
-                img: 'https://media.radissonhotels.net/image/radisson-blu-hotel-amsterdam-airport-schiphol/exterior/16256-116696-f70347671_4K.jpg?impolicy=GalleryLightboxFullscreen',
+                img: 'img/radisson-blu.jpg',
                 desc: '阿姆斯特丹史基浦機場附近的連鎖酒店，適合回程中繼。',
                 tip: null,
                 url: 'https://www.radissonhotels.com/',
