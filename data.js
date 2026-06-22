@@ -660,7 +660,7 @@ const TRIP = {
                     '🚗 Aarhus → JL Møller（20 min）',
                     '🏭 JL Møller 工廠參觀（1–2 hr）',
                     '🚗 → Aarhus 市區（20 min）',
-                    '🎨 ARoS 現代藝術博物館 或 Den Gamle By（2 hr）',
+                    '🎨 ARoS 現代藝術博物館（2 hr）',
                     '⛴ 18:30 Mols-Linjen 渡輪 Aarhus → Odden（70 min）',
                     '🚗 Odden → Copenhagen（1 hr 30 min）',
                   ],
@@ -676,19 +676,12 @@ const TRIP = {
                     {
                       name: 'ARoS 現代藝術博物館',
                       nameEn: 'ARoS Aarhus Art Museum',
-                      img: null,
+                      img: 'img/aros.webp',
                       desc: 'Aarhus 地標現代藝術博物館，頂樓「彩虹全景天際圈」是不可錯過的視覺盛宴。',
                       tip: '走在懸空的彩虹玻璃隧道裡可 360 度俯瞰城市美景。',
                       url: 'https://maps.app.goo.gl/ESb9MKLsXaccDg4r6',
                     },
-                    {
-                      name: 'Den Gamle By 老城博物館',
-                      nameEn: 'Den Gamle By',
-                      img: 'img/den-gamle-by.jpg',
-                      desc: '完整重現 19 世紀丹麥城鎮街景與生活的露天歷史博物館。',
-                      tip: '適合慢步拍照，走進古老傳統店舖感受穿梭時空的北歐歷史魅力。',
-                      url: 'https://www.dengamleby.dk/en/',
-                    },
+
                     {
                       name: 'Mols-Linjen 渡輪',
                       nameEn: 'Mols-Linjen Ferry',
