@@ -186,31 +186,14 @@ const TRIP = {
               },
             },
             {
-              time: '下午', type: 'default',
-              evType: '分流',
-              title: '（路線一）Vondelpark 租腳踏車 → 繞行運河區',
-            },
-            {
-              time: '下午', type: 'food',
-              evType: '市場・分流',
-              title: '（路線二）Albert Cuyp 市場買野餐食材',
-              spot: {
-                nameEn: 'Albert Cuyp Market',
-                img: 'img/albert-cuyp.jpg',
-                desc: '阿姆斯特丹最大露天市場，必嚐現烤焦糖煎餅等庶民美食。',
-                tip: '大團體請注意看管隨身財物。',
-                url: 'https://maps.app.goo.gl/GXPxCb5ZW2Dqx13K6',
-              },
-            },
-            {
-              time: '合流', type: 'sight',
-              evType: '野餐・合流',
-              title: 'Vondelpark 草地野餐',
+              time: '下午', type: 'sight',
+              evType: '公園・單車',
+              title: 'Vondelpark 租腳踏車、野餐',
               spot: {
                 nameEn: 'Vondelpark',
                 img: 'img/vondelpark.webp',
-                desc: '城市心臟地帶的大公園，氛圍悠閒，適合在草地上放鬆野餐。',
-                tip: null,
+                desc: '城市心臟地帶的大公園，氛圍悠閒，適合租腳踏車繞行運河區後在草地上野餐放鬆。',
+                tip: '可事先在附近超市或市場買好野餐食材。',
                 url: 'https://maps.app.goo.gl/3bo86px4qpJBB4sv7',
               },
             },
@@ -292,6 +275,12 @@ const TRIP = {
               time: '11:00', type: 'default',
               evType: '退房',
               title: 'De Ware Jacob Boutique Hotel 退房',
+            },
+            {
+              time: '15:00', type: 'flight',
+              evType: 'S · 航班 · SK1812',
+              title: 'S 家 Arrive ARN',
+              hint: 'S 家自行取 Stockholm 租車、Check-in Mysig Villa',
             },
             {
               time: '17:40', type: 'flight',
@@ -407,6 +396,12 @@ const TRIP = {
             {
               type: 'family',
               title: 'E 家今日離隊，前往挪威 Geirangerfjord 自行遊覽',
+            },
+            {
+              time: '20:05', type: 'flight',
+              evType: 'E · 航班 · SK1483 → SK1334',
+              title: 'E 家 ARN → OSL → AES',
+              hint: '20:05 ARN→OSL（21:05 抵達）・22:05 OSL→AES（23:00 抵達）・出發前先還 Stockholm 租車',
             },
           ],
         },
@@ -527,8 +522,20 @@ const TRIP = {
           date: '7/23', dow: 'Thu', dayNum: 12, title: 'Nyhavn・設計博物館・電動船',
           events: [
             {
+              time: '15:05', type: 'flight',
+              evType: 'E · 航班 · SK2893',
+              title: 'E 家 AES → CPH',
+              hint: '16:40 抵達，隨即取 Copenhagen 租車',
+            },
+            {
               type: 'family',
               title: 'E 家今日抵達哥本哈根，四家全員再次集合！',
+            },
+            {
+              time: '上午', type: 'drive',
+              evType: '自駕',
+              title: '前往 Høje Taastrup Station',
+              hint: '車程約 50 min，再轉輕軌 15 min ＋ 地鐵 7 min 至 Kongens Nytorv',
             },
             {
               time: '上午', type: 'sight',
@@ -788,6 +795,12 @@ const TRIP = {
           date: '7/28', dow: 'Tue', dayNum: 17, title: '路易斯安那現代藝術博物館',
           events: [
             {
+              time: '上午', type: 'drive',
+              evType: '自駕',
+              title: '前往路易斯安那現代藝術博物館',
+              hint: '車程約 45 min',
+            },
+            {
               time: '全天', type: 'sight',
               evType: '博物館',
               title: '路易斯安那現代藝術博物館',
@@ -806,6 +819,12 @@ const TRIP = {
         {
           date: '7/29', dow: 'Wed', dayNum: 18, title: 'Tivoli Gardens',
           events: [
+            {
+              time: '下午', type: 'drive',
+              evType: '自駕',
+              title: '前往 Tivoli Gardens',
+              hint: '車程約 20 min',
+            },
             {
               time: '下午', type: 'sight',
               evType: '主題樂園',
