@@ -307,9 +307,11 @@ main { padding: 0 0 5.5rem; max-width: 480px; margin: 0 auto; }
 }
 .family-icon { font-size: 14px; flex-shrink: 0; }
 
-/* Card image */
+/* Card image — fixed height, uncropped (object-fit: contain) */
 .card-img {
-  width: 100%; height: auto;
+  width: 100%; height: 172px;
+  object-fit: contain; object-position: center;
+  background: rgba(0,0,0,0.035);
   display: block;
 }
 
@@ -339,7 +341,9 @@ main { padding: 0 0 5.5rem; max-width: 480px; margin: 0 auto; }
   background: rgba(255,255,255,0.7);
 }
 .spot-img {
-  width: 100%; height: auto;
+  width: 100%; height: 140px;
+  object-fit: contain; object-position: center;
+  background: rgba(0,0,0,0.035);
   display: block;
 }
 .spot-body { padding: 8px 10px 9px; }
@@ -363,6 +367,75 @@ main { padding: 0 0 5.5rem; max-width: 480px; margin: 0 auto; }
   margin-top: 7px; font-size: 11px;
   color: #3182ce; text-decoration: none;
 }
+.spot-addr {
+  font-size: 11px; color: #4a5568;
+  margin-top: 5px; line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 4px;
+}
+.spot-addr::before { content: '📍'; flex-shrink: 0; }
+
+/* ── Guide (行程細節一覽) ──────────────────────── */
+.guide-block {
+  margin: 12px 12px 0;
+  background: var(--t-bg2);
+  border-radius: 12px;
+  border: 1px solid var(--t-border);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.guide-toggle {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px; cursor: pointer;
+  user-select: none;
+}
+.guide-icon { font-size: 15px; flex-shrink: 0; }
+.guide-toggle-label {
+  flex: 1; font-size: 13px; font-weight: 500;
+  color: var(--t-text);
+}
+.guide-count {
+  font-size: 10.5px; color: var(--t-primary);
+  background: var(--t-dim);
+  border: 1px solid var(--t-border);
+  border-radius: 10px; padding: 1px 8px;
+  flex-shrink: 0;
+}
+.guide-chevron {
+  font-size: 14px; color: #a0aec0;
+  transition: transform 0.2s; flex-shrink: 0;
+}
+.guide-block.open .guide-chevron { transform: rotate(180deg); }
+.guide-panel {
+  display: none;
+  border-top: 1px solid #f0f4f8;
+  padding: 8px 14px 12px;
+}
+.guide-block.open .guide-panel { display: block; }
+.guide-list {
+  display: flex; flex-direction: column;
+}
+.guide-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.guide-item:last-child { border-bottom: none; }
+.guide-tag {
+  flex-shrink: 0; font-size: 9.5px;
+  color: var(--t-primary);
+  background: var(--t-dim);
+  border: 1px solid var(--t-border);
+  border-radius: 4px; padding: 2px 6px;
+  white-space: nowrap;
+}
+.guide-name {
+  flex: 1; min-width: 0;
+  font-size: 12.5px; color: #2d3748;
+  overflow-wrap: break-word;
+}
+.guide-item a.guide-name { color: #2d3748; text-decoration: none; }
+.guide-item a.guide-name:hover { text-decoration: underline; }
+.guide-linkmark { font-size: 10px; color: #a0aec0; flex-shrink: 0; }
 
 /* ── Split Routes ─────────────────────────────── */
 .split-container {
@@ -464,13 +537,20 @@ function esc(s) {
 }
 
 // ── Spot Card ──────────────────────────────────────────────────────
-function renderSpotCard(spot, compact) {
+// Tracks which hotel names have already shown their address once.
+const seenHotelAddr = new Set();
+
+function renderSpotCard(spot, opts) {
   if (!spot) return '';
+  opts = opts || {};
   const imgHtml = spot.img
     ? `<img class="spot-img" src="${esc(spot.img)}" alt="${esc(spot.name||spot.nameEn||'')}" loading="lazy" onerror="this.style.display='none'">`
     : '';
   const tipHtml = spot.tip ? `<div class="spot-tip">${esc(spot.tip)}</div>` : '';
   const enHtml  = spot.nameEn ? `<div class="spot-en">${esc(spot.nameEn)}</div>` : '';
+  const addrHtml = (opts.showAddress && spot.address)
+    ? `<div class="spot-addr">${esc(spot.address)}</div>`
+    : '';
   const linkHtml = spot.url
     ? `<a class="spot-link" href="${esc(spot.url)}" target="_blank" rel="noopener">🔗 查看</a>`
     : '';
@@ -482,6 +562,7 @@ function renderSpotCard(spot, compact) {
     <div class="spot-body">
       ${nameHtml}
       <div class="spot-desc">${esc(spot.desc||'')}</div>
+      ${addrHtml}
       ${tipHtml}
       ${linkHtml}
     </div>
@@ -524,7 +605,15 @@ function renderEvent(ev, theme) {
   }
 
   // Normal event
-  const spotHtml = ev.spot ? renderSpotCard(ev.spot) : '';
+  let showAddress = false;
+  if (ev.type === 'hotel' && ev.spot && ev.spot.address) {
+    const key = ev.spot.nameEn || ev.spot.name || ev.title;
+    if (!seenHotelAddr.has(key)) {
+      seenHotelAddr.add(key);
+      showAddress = true;
+    }
+  }
+  const spotHtml = ev.spot ? renderSpotCard(ev.spot, {showAddress}) : '';
   const hintHtml = ev.hint ? `<div class="ev-hint">${esc(ev.hint)}</div>` : '';
   const imgHtml  = (!ev.spot && ev.img)
     ? `<img class="card-img" src="${esc(ev.img)}" loading="lazy" onerror="this.style.display='none'">`
@@ -564,9 +653,35 @@ function renderDay(day, theme) {
   </div>`;
 }
 
+// ── Guide Block (行程細節一覽，可收合) ────────────────────────────────
+function renderGuideItem(item) {
+  const tagHtml = `<span class="guide-tag">${esc(item.tag||'')}</span>`;
+  const nameHtml = item.url
+    ? `<a class="guide-name" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.name)}</a>`
+    : `<span class="guide-name">${esc(item.name)}</span>`;
+  const linkMark = item.url ? `<span class="guide-linkmark">🔗</span>` : '';
+  return `<div class="guide-item">${tagHtml}${nameHtml}${linkMark}</div>`;
+}
+
+function renderGuideBlock(sec) {
+  const list = sec.guideItems || [];
+  if (!list.length) return '';
+  const itemsHtml = list.map(renderGuideItem).join('');
+  return `<div class="guide-block" id="guide-${esc(sec.id)}">
+    <div class="guide-toggle" onclick="this.closest('.guide-block').classList.toggle('open')">
+      <div class="guide-icon">📋</div>
+      <div class="guide-toggle-label">行程細節一覽</div>
+      <div class="guide-count">${list.length}</div>
+      <div class="guide-chevron">▾</div>
+    </div>
+    <div class="guide-panel"><div class="guide-list">${itemsHtml}</div></div>
+  </div>`;
+}
+
 // ── Section ────────────────────────────────────────────────────────
 function renderSection(sec) {
   const daysHtml = (sec.days||[]).map(d => renderDay(d, sec.theme)).join('');
+  const guideHtml = renderGuideBlock(sec);
   const subtitle = sec.country ? `${sec.flag} ${sec.name} · ${sec.country} · ${sec.dates}` : `${sec.flag} ${sec.dates}`;
   return `<div class="section theme-${esc(sec.theme)}" id="sec-${esc(sec.id)}">
     <div class="section-hero">
@@ -576,7 +691,7 @@ function renderSection(sec) {
         <div class="hero-dates">${esc(sec.dates)}</div>
       </div>
     </div>
-    <div class="section-body theme-${esc(sec.theme)}">${daysHtml}<div style="height:8px"></div></div>
+    <div class="section-body theme-${esc(sec.theme)}">${guideHtml}${daysHtml}<div style="height:8px"></div></div>
   </div>`;
 }
 
